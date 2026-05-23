@@ -1,0 +1,10 @@
+PyQt6>=6.6.0
+pyqtgraph>=0.13.3
+pyserial>=3.5
+numpy>=1.26.0
+
+# The PyPI release of pyvesc (1.0.5) is much older than the GitHub master
+# and is missing the high-level `VESC` class, `Alive`, `SetHandbrake` and
+# the modern `GetValues` field layout, so we install directly from the
+# repository.
+pyvesc @ git+https://github.com/LiamBindle/PyVESC@master
