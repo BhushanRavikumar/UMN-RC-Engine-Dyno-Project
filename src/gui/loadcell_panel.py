@@ -8,8 +8,8 @@ The panel exposes two columns (one per cell) with:
   and computes ``counts_per_newton`` from the difference between the
   current raw count and the tare offset.
 
-A lever-arm spin box at the bottom converts the *sum* of the two forces
-to a torque in N·m, which is also published over the ``torque_changed``
+A lever-arm spin box at the bottom converts the absolute difference of
+the two forces to a torque in N·m, which is also published over the ``torque_changed``
 signal so other widgets (e.g. the data logger) can listen in.
 """
 
@@ -172,7 +172,7 @@ class LoadCellPanel(QWidget):
         self._lc1.update_reading(sample.raw1, sample.force1_n)
         self._lc2.update_reading(sample.raw2, sample.force2_n)
 
-        torque = (sample.force1_n + sample.force2_n) * self._cfg.lever_arm_m
+        torque = abs(sample.force1_n - sample.force2_n) * self._cfg.lever_arm_m
         self._torque_label.setText(f"{torque:+.3f} N·m")
         self.torque_changed.emit(sample.t_monotonic, torque)
 

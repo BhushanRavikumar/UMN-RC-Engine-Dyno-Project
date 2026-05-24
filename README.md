@@ -88,7 +88,7 @@ A PyQt6 desktop application for a small motor dynamometer. It
    then place a known mass on each cell and enter the reference value in kg.
    The slope (counts per Newton) is saved to `config.json`.
 7. Enter the **lever-arm length** in meters. Torque is now computed continuously
-   as `(F1 + F2) * L`.
+   as `|F1 - F2| * L`.
 8. Click anywhere on the **VESC panel** to give it keyboard focus, then drive
    with the arrow keys, or type setpoints into the spin boxes.
 
