@@ -2,41 +2,44 @@
 
 Composition:
 
-- Left dock: load-cell calibration / torque panel.
-- Right side (main area): tabbed view with
-    * "Live": RPM counter + scrolling RPM plot + animated motor graphic.
-    * "Control": VESC control panel (arrow-key driving).
+- Left dock: load-cell calibration / torque panel stacked above the
+  VESC motor-control panel (arrow-key driving), split vertically.
+- Center (main area): "Live" view — RPM counter + scrolling RPM plot
+  stacked above the torque counter + scrolling torque plot.
 
-A *Connect* menu opens the connection dialog; a status bar shows the
-state of both serial links.
+A *Connect* menu opens the connection dialog; a *Record* menu starts /
+stops logging RPM and torque to a user-chosen CSV file. A status bar
+shows the state of both serial links and the recording.
 """
 
 from __future__ import annotations
 
 import logging
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QAction, QKeySequence
 from PyQt6.QtWidgets import (
     QDockWidget,
-    QHBoxLayout,
+    QFileDialog,
+    QGroupBox,
     QLabel,
     QMainWindow,
     QMessageBox,
     QSplitter,
     QStatusBar,
-    QTabWidget,
     QVBoxLayout,
     QWidget,
 )
 
 from ..config import AppConfig
+from ..data_recorder import DataRecorder
 from ..hardware.loadcell_serial import LoadCellSerial
 from ..hardware.vesc_controller import VescController
 from .connection_dialog import ConnectionDialog
 from .loadcell_panel import LoadCellPanel
-from .motor_graphic import MotorGraphic
 from .rpm_view import RpmView
 from .torque_view import TorqueView
 from .vesc_panel import VescPanel
@@ -54,57 +57,57 @@ class MainWindow(QMainWindow):
         self._loadcell = LoadCellSerial(cfg.lc1, cfg.lc2, parent=self)
         self._vesc = VescController(parent=self)
 
-        # ---------- left dock: load-cell panel ----------
+        # ---------- left dock: load-cell panel above VESC control panel ----------
         self._lc_panel = LoadCellPanel(cfg, self._loadcell, parent=self)
-        lc_dock = QDockWidget("Load cells && torque", self)
-        lc_dock.setObjectName("LoadCellDock")
-        lc_dock.setWidget(self._lc_panel)
-        lc_dock.setAllowedAreas(
-            Qt.DockWidgetArea.LeftDockWidgetArea | Qt.DockWidgetArea.RightDockWidgetArea
-        )
-        self.addDockWidget(Qt.DockWidgetArea.LeftDockWidgetArea, lc_dock)
-
-        # ---------- central widget: tabs ----------
-        self._rpm_view = RpmView(parent=self)
-        self._torque_view = TorqueView(parent=self)
-        self._motor_graphic = MotorGraphic(parent=self)
         self._vesc_panel = VescPanel(cfg, self._vesc, parent=self)
 
-        # "Live" tab: motor graphic on the left, RPM stacked above torque
-        # on the right. Both axes use independent ring buffers so they
-        # scroll at their own native sample rates.
-        live_tab = QWidget()
+        # Both panels live in a single dock on the left, split vertically:
+        # load cells / torque on top, motor control below.
+        left_splitter = QSplitter(Qt.Orientation.Vertical)
+        left_splitter.addWidget(self._wrap_in_group("Load cells & torque", self._lc_panel))
+        left_splitter.addWidget(self._wrap_in_group("Motor control", self._vesc_panel))
+        left_splitter.setStretchFactor(0, 1)
+        left_splitter.setStretchFactor(1, 1)
+
+        left_dock = QDockWidget("Controls", self)
+        left_dock.setObjectName("ControlsDock")
+        left_dock.setWidget(left_splitter)
+        left_dock.setAllowedAreas(
+            Qt.DockWidgetArea.LeftDockWidgetArea | Qt.DockWidgetArea.RightDockWidgetArea
+        )
+        self.addDockWidget(Qt.DockWidgetArea.LeftDockWidgetArea, left_dock)
+
+        # ---------- central widget: live view ----------
+        self._rpm_view = RpmView(parent=self)
+        self._torque_view = TorqueView(parent=self)
+
+        # Live view: RPM stacked above torque. Both axes use independent
+        # ring buffers so they scroll at their own native sample rates.
         plots_splitter = QSplitter(Qt.Orientation.Vertical)
         plots_splitter.addWidget(self._rpm_view)
         plots_splitter.addWidget(self._torque_view)
         plots_splitter.setStretchFactor(0, 1)
         plots_splitter.setStretchFactor(1, 1)
 
-        live_splitter = QSplitter(Qt.Orientation.Horizontal, live_tab)
-        live_splitter.addWidget(self._motor_graphic)
-        live_splitter.addWidget(plots_splitter)
-        live_splitter.setStretchFactor(0, 1)
-        live_splitter.setStretchFactor(1, 2)
+        self.setCentralWidget(plots_splitter)
 
-        live_layout = QHBoxLayout(live_tab)
-        live_layout.setContentsMargins(0, 0, 0, 0)
-        live_layout.addWidget(live_splitter)
-
-        tabs = QTabWidget()
-        tabs.addTab(live_tab, "Live")
-        tabs.addTab(self._vesc_panel, "Control")
-        self.setCentralWidget(tabs)
+        # ---------- data recorder ----------
+        self._recorder = DataRecorder(parent=self)
 
         # ---------- status bar ----------
         self._arduino_status = QLabel("Arduino: disconnected")
         self._vesc_status = QLabel("VESC: disconnected")
+        self._record_status = QLabel("Not recording")
         self._arduino_status.setStyleSheet("color: gray;")
         self._vesc_status.setStyleSheet("color: gray;")
+        self._record_status.setStyleSheet("color: gray;")
 
         status = QStatusBar(self)
         status.addPermanentWidget(self._arduino_status)
         status.addPermanentWidget(QLabel("    "))
         status.addPermanentWidget(self._vesc_status)
+        status.addPermanentWidget(QLabel("    "))
+        status.addPermanentWidget(self._record_status)
         self.setStatusBar(status)
 
         # ---------- menus ----------
@@ -114,12 +117,27 @@ class MainWindow(QMainWindow):
         self._loadcell.connection_changed.connect(self._on_arduino_conn)
         self._loadcell.error.connect(self._on_serial_error)
         self._vesc.connection_changed.connect(self._on_vesc_conn)
-        self._vesc.connection_changed.connect(self._motor_graphic.set_connected)
         self._vesc.error.connect(self._on_serial_error)
         self._vesc.telemetry.connect(self._rpm_view.add_sample)
-        self._vesc.telemetry.connect(self._motor_graphic.add_sample)
         self._lc_panel.torque_changed.connect(self._torque_view.add_sample)
         self._vesc_panel.status_message.connect(self.statusBar().showMessage)
+
+        # Recording taps the same live streams as the plots.
+        self._vesc.telemetry.connect(self._recorder.on_rpm)
+        self._lc_panel.torque_changed.connect(self._recorder.on_torque)
+        self._recorder.recording_changed.connect(self._on_recording_changed)
+        self._recorder.error.connect(self._on_serial_error)
+
+    # ============================================================ layout helpers
+
+    @staticmethod
+    def _wrap_in_group(title: str, inner: QWidget) -> QGroupBox:
+        """Put a panel inside a titled group box for the stacked left dock."""
+        box = QGroupBox(title)
+        layout = QVBoxLayout(box)
+        layout.setContentsMargins(6, 6, 6, 6)
+        layout.addWidget(inner)
+        return box
 
     # ============================================================ menu/actions
 
@@ -146,6 +164,18 @@ class MainWindow(QMainWindow):
         disconnect_act = QAction("Disconnect all", self)
         disconnect_act.triggered.connect(self._disconnect_all)
         conn_menu.addAction(disconnect_act)
+
+        record_menu = menubar.addMenu("&Record")
+        self._start_record_act = QAction("Start recording…", self)
+        self._start_record_act.setShortcut(QKeySequence("Ctrl+R"))
+        self._start_record_act.triggered.connect(self._start_recording)
+        record_menu.addAction(self._start_record_act)
+
+        self._stop_record_act = QAction("Stop recording", self)
+        self._stop_record_act.setShortcut(QKeySequence("Ctrl+Shift+R"))
+        self._stop_record_act.triggered.connect(self._stop_recording)
+        self._stop_record_act.setEnabled(False)
+        record_menu.addAction(self._stop_record_act)
 
         help_menu = menubar.addMenu("&Help")
         about_act = QAction("About", self)
@@ -184,6 +214,46 @@ class MainWindow(QMainWindow):
         self._loadcell.close()
         self._vesc.close()
 
+    # ----------------------------------------------------------- recording
+
+    def _start_recording(self) -> None:
+        default_name = datetime.now().strftime("dyno_%Y%m%d_%H%M%S.csv")
+        start_dir = self._cfg.last_record_dir or str(Path.home())
+        path, _filter = QFileDialog.getSaveFileName(
+            self,
+            "Save RPM / torque recording",
+            str(Path(start_dir) / default_name),
+            "CSV files (*.csv);;All files (*)",
+        )
+        if not path:
+            return
+        if not path.lower().endswith(".csv"):
+            path += ".csv"
+
+        if self._recorder.start(path):
+            self._cfg.last_record_dir = str(Path(path).parent)
+            self.statusBar().showMessage(f"Recording to {path}", 4_000)
+
+    def _stop_recording(self) -> None:
+        rows = self._recorder.row_count
+        path = self._recorder.path
+        self._recorder.stop()
+        if path is not None:
+            self.statusBar().showMessage(
+                f"Saved {rows} rows to {path}", 5_000
+            )
+
+    def _on_recording_changed(self, recording: bool) -> None:
+        self._start_record_act.setEnabled(not recording)
+        self._stop_record_act.setEnabled(recording)
+        if recording:
+            name = Path(self._recorder.path).name if self._recorder.path else ""
+            self._record_status.setText(f"● REC  {name}")
+            self._record_status.setStyleSheet("color: #c0392b; font-weight: bold;")
+        else:
+            self._record_status.setText("Not recording")
+            self._record_status.setStyleSheet("color: gray;")
+
     def _save_settings(self) -> None:
         try:
             self._cfg.save()
@@ -219,12 +289,14 @@ class MainWindow(QMainWindow):
             "About",
             "<h3>Motor Dyno GUI</h3>"
             "<p>HX711 load cells via Arduino + VESC motor controller "
-            "with live RPM, torque, and animated motor graphic.</p>",
+            "with live RPM and torque plotting and CSV recording.</p>",
         )
 
     # ============================================================ shutdown
 
     def closeEvent(self, event) -> None:  # noqa: N802
+        # Flush any in-progress recording before everything tears down.
+        self._recorder.stop()
         # Make sure the motor is not left spinning when the GUI exits.
         try:
             self._vesc.release()

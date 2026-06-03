@@ -9,26 +9,26 @@ A PyQt6 desktop application for a small motor dynamometer. It
 - Lets the user **drive the motor with the arrow keys** (up = speed up, down = slow down,
   left = reverse current bump, right = forward current bump, space = full brake,
   Esc = release).
-- Shows **live RPM** as a big numeric counter and a high-refresh-rate scrolling plot.
-- Draws an **animated motor graphic** whose rotor angle follows the real motor.
+- Shows **live RPM and torque** as big numeric counters and high-refresh-rate
+  scrolling plots.
+- **Records RPM and torque to a CSV file** at a path the user chooses.
 
 ```
 +---------------------------------------------------------------+
-|  File  Connection  Calibration  Help                          |
+|  File  Connection  Record  Help                               |
 +--------------------+------------------------------------------+
-| Connections        |  Live RPM:  1234.5  rpm                  |
-|  - Arduino (HX711) |  +------------------------------------+  |
-|  - VESC            |  |        RPM vs time plot            |  |
-|                    |  +------------------------------------+  |
-| Load cells         |                                          |
-|  Tare / Calibrate  |   +---------+   Voltage:    24.1 V       |
-|  LC1: 12.3 N       |   | Motor   |   Current:     3.2 A       |
-|  LC2: 11.9 N       |   | spinner |   Duty:       42.1 %       |
-|  Lever arm: 0.10 m |   +---------+   Temp:       38.5 C       |
-|  Torque:  1.21 Nm  |                                          |
-|                    |   Control mode:  [ RPM | Current | ...]  |
-|                    |   Setpoint: [    1500 ] [Apply]          |
-|                    |   [FULL BRAKE]   [RELEASE]               |
+| Load cells & torque|  Live RPM:  1234.5  rpm                  |
+|  Tare / Calibrate  |  +------------------------------------+  |
+|  LC1: 12.3 N       |  |        RPM vs time plot            |  |
+|  LC2: 11.9 N       |  +------------------------------------+  |
+|  Lever arm: 0.10 m |  Live Torque:  1.21 N·m                  |
+|  Torque:  1.21 Nm  |  +------------------------------------+  |
+|--------------------|  |       Torque vs time plot          |  |
+| Motor control      |  +------------------------------------+  |
+|  Telemetry / mode  |                                          |
+|  Setpoint [Apply]  |                                          |
+|  [FULL BRAKE]      |                                          |
+|  [RELEASE]         |                                          |
 +--------------------+------------------------------------------+
 ```
 
@@ -44,12 +44,13 @@ A PyQt6 desktop application for a small motor dynamometer. It
 │   ├── hardware/
 │   │   ├── loadcell_serial.py          # Arduino HX711 link
 │   │   └── vesc_controller.py          # VESC UART wrapper
+│   ├── data_recorder.py                # RPM / torque CSV logger
 │   └── gui/
 │       ├── main_window.py
 │       ├── loadcell_panel.py
 │       ├── vesc_panel.py
 │       ├── rpm_view.py
-│       └── motor_graphic.py
+│       └── torque_view.py
 ├── requirements.txt
 └── README.md
 ```
@@ -89,8 +90,13 @@ A PyQt6 desktop application for a small motor dynamometer. It
    The slope (counts per Newton) is saved to `config.json`.
 7. Enter the **lever-arm length** in meters. Torque is now computed continuously
    as `|F1 - F2| * L`.
-8. Click anywhere on the **VESC panel** to give it keyboard focus, then drive
-   with the arrow keys, or type setpoints into the spin boxes.
+8. Click anywhere on the **Motor control** panel (lower-left) to give it keyboard
+   focus, then drive with the arrow keys, or type setpoints into the spin boxes.
+9. To log data, open the **Record** menu and choose *Start recording…* (Ctrl+R).
+   Pick a `.csv` path; RPM and torque samples are appended live. Choose
+   *Stop recording* (Ctrl+Shift+R) when done. Each row is
+   `timestamp, elapsed_s, source, rpm, torque_nm`, where `source` marks which
+   value is fresh and the other column carries the most recent reading.
 
 ## Safety
 

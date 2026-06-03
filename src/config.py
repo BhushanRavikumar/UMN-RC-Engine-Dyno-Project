@@ -52,6 +52,9 @@ class AppConfig:
     max_brake_current_a: float = 30.0
     arrow_current_step_a: float = 0.5
 
+    # Directory last used when saving an RPM / torque CSV recording.
+    last_record_dir: str = ""
+
     # ------------------------------------------------------------------ I/O
 
     @classmethod
