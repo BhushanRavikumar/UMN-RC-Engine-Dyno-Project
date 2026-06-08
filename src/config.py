@@ -50,7 +50,17 @@ class AppConfig:
     max_rpm: float = 10_000.0
     max_current_a: float = 30.0
     max_brake_current_a: float = 30.0
-    arrow_current_step_a: float = 0.5
+
+    # Throttle servo (driven by the Arduino on pin D9). The two angles
+    # below define what raw servo angle corresponds to 0 % and 100 %
+    # throttle respectively; the host linearly interpolates between them.
+    # ``servo_min_angle`` may be larger than ``servo_max_angle`` if the
+    # mechanical linkage runs the other way.
+    servo_min_angle_deg: float = 0.0
+    servo_max_angle_deg: float = 180.0
+    # Per-press step sizes for arrow-key control on the servo panel.
+    servo_calib_step_deg: float = 1.0
+    servo_throttle_step_pct: float = 1.0
 
     # Directory last used when saving an RPM / torque CSV recording.
     last_record_dir: str = ""

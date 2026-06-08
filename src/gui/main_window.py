@@ -3,7 +3,8 @@
 Composition:
 
 - Left dock: load-cell calibration / torque panel stacked above the
-  VESC motor-control panel (arrow-key driving), split vertically.
+  throttle-servo panel and the VESC motor-control panel, split
+  vertically.
 - Center (main area): "Live" view — RPM counter + scrolling RPM plot
   stacked above the torque counter + scrolling torque plot.
 
@@ -22,12 +23,14 @@ from typing import Optional
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QAction, QKeySequence
 from PyQt6.QtWidgets import (
+    QApplication,
     QDockWidget,
     QFileDialog,
     QGroupBox,
     QLabel,
     QMainWindow,
     QMessageBox,
+    QScrollArea,
     QSplitter,
     QStatusBar,
     QVBoxLayout,
@@ -41,6 +44,7 @@ from ..hardware.vesc_controller import VescController
 from .connection_dialog import ConnectionDialog
 from .loadcell_panel import LoadCellPanel
 from .rpm_view import RpmView
+from .servo_panel import ServoPanel
 from .torque_view import TorqueView
 from .vesc_panel import VescPanel
 
@@ -48,30 +52,61 @@ log = logging.getLogger(__name__)
 
 
 class MainWindow(QMainWindow):
+    # Preferred starting size when the screen is generous enough.
+    _PREFERRED_W = 1400
+    _PREFERRED_H = 880
+    # Margin we leave around the window so the title bar, taskbar,
+    # and OS chrome are never clipped.
+    _SCREEN_MARGIN = 80
+
     def __init__(self, cfg: AppConfig) -> None:
         super().__init__()
         self.setWindowTitle("Motor Dyno — Load Cell & VESC")
-        self.resize(1400, 880)
+        # The window must never be larger than the user's screen, otherwise
+        # the bottom panels of the left dock can get pushed off-screen.
+        self._size_to_screen()
 
         self._cfg = cfg
         self._loadcell = LoadCellSerial(cfg.lc1, cfg.lc2, parent=self)
         self._vesc = VescController(parent=self)
 
-        # ---------- left dock: load-cell panel above VESC control panel ----------
+        # ---------- left dock: load-cell, servo, and VESC panels ----------
         self._lc_panel = LoadCellPanel(cfg, self._loadcell, parent=self)
+        self._servo_panel = ServoPanel(cfg, self._loadcell, parent=self)
         self._vesc_panel = VescPanel(cfg, self._vesc, parent=self)
 
-        # Both panels live in a single dock on the left, split vertically:
-        # load cells / torque on top, motor control below.
+        # All three panels live in a single dock on the left, split vertically:
+        # load cells / torque on top, throttle servo in the middle, VESC
+        # motor control at the bottom.
         left_splitter = QSplitter(Qt.Orientation.Vertical)
         left_splitter.addWidget(self._wrap_in_group("Load cells & torque", self._lc_panel))
+        left_splitter.addWidget(self._wrap_in_group("Throttle servo", self._servo_panel))
         left_splitter.addWidget(self._wrap_in_group("Motor control", self._vesc_panel))
-        left_splitter.setStretchFactor(0, 1)
-        left_splitter.setStretchFactor(1, 1)
+        left_splitter.setStretchFactor(0, 2)
+        left_splitter.setStretchFactor(1, 2)
+        left_splitter.setStretchFactor(2, 2)
+        # Keep handles obvious so the user can drag panel boundaries.
+        left_splitter.setHandleWidth(6)
+        left_splitter.setChildrenCollapsible(False)
+
+        # Wrap the splitter in a scroll area so the three stacked panels
+        # always remain reachable on shorter screens — a vertical scrollbar
+        # appears only when they don't fit, and disappears as soon as the
+        # user resizes the dock wide / tall enough.
+        left_scroll = QScrollArea()
+        left_scroll.setWidgetResizable(True)
+        left_scroll.setFrameShape(QScrollArea.Shape.NoFrame)
+        left_scroll.setHorizontalScrollBarPolicy(
+            Qt.ScrollBarPolicy.ScrollBarAsNeeded
+        )
+        left_scroll.setVerticalScrollBarPolicy(
+            Qt.ScrollBarPolicy.ScrollBarAsNeeded
+        )
+        left_scroll.setWidget(left_splitter)
 
         left_dock = QDockWidget("Controls", self)
         left_dock.setObjectName("ControlsDock")
-        left_dock.setWidget(left_splitter)
+        left_dock.setWidget(left_scroll)
         left_dock.setAllowedAreas(
             Qt.DockWidgetArea.LeftDockWidgetArea | Qt.DockWidgetArea.RightDockWidgetArea
         )
@@ -121,14 +156,41 @@ class MainWindow(QMainWindow):
         self._vesc.telemetry.connect(self._rpm_view.add_sample)
         self._lc_panel.torque_changed.connect(self._torque_view.add_sample)
         self._vesc_panel.status_message.connect(self.statusBar().showMessage)
+        self._servo_panel.status_message.connect(self.statusBar().showMessage)
 
-        # Recording taps the same live streams as the plots.
+        # Recording taps the same live streams as the plots, plus every
+        # throttle command the user issues from the servo panel.
         self._vesc.telemetry.connect(self._recorder.on_rpm)
         self._lc_panel.torque_changed.connect(self._recorder.on_torque)
+        self._servo_panel.throttle_changed.connect(self._recorder.on_throttle)
         self._recorder.recording_changed.connect(self._on_recording_changed)
         self._recorder.error.connect(self._on_serial_error)
 
     # ============================================================ layout helpers
+
+    def _size_to_screen(self) -> None:
+        """Resize the window to fit the user's primary screen.
+
+        Picks the smaller of the preferred design size and the available
+        screen geometry (minus a margin for the title bar / taskbar),
+        then centres the window. This guarantees the bottom of the left
+        dock — and the status bar — are always on-screen no matter what
+        resolution the host runs at.
+        """
+        screen = QApplication.primaryScreen()
+        if screen is None:
+            self.resize(self._PREFERRED_W, self._PREFERRED_H)
+            return
+
+        avail = screen.availableGeometry()
+        w = min(self._PREFERRED_W, max(800, avail.width() - self._SCREEN_MARGIN))
+        h = min(self._PREFERRED_H, max(600, avail.height() - self._SCREEN_MARGIN))
+        self.resize(w, h)
+
+        # Centre on the screen.
+        x = avail.x() + (avail.width() - w) // 2
+        y = avail.y() + (avail.height() - h) // 2
+        self.move(x, y)
 
     @staticmethod
     def _wrap_in_group(title: str, inner: QWidget) -> QGroupBox:
@@ -297,7 +359,12 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event) -> None:  # noqa: N802
         # Flush any in-progress recording before everything tears down.
         self._recorder.stop()
-        # Make sure the motor is not left spinning when the GUI exits.
+        # Make sure the throttle is fully closed and the motor is not
+        # left spinning when the GUI exits.
+        try:
+            self._servo_panel.zero_throttle()
+        except Exception:  # noqa: BLE001
+            pass
         try:
             self._vesc.release()
         except Exception:  # noqa: BLE001

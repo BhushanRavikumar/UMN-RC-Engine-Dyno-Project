@@ -45,10 +45,10 @@ class LiveCounter(QWidget):
 
         self._title = QLabel(title)
         self._title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self._title.setStyleSheet("color: gray; font-size: 11pt;")
+        self._title.setStyleSheet("color: gray; font-size: 10pt;")
 
         self._big = QLabel("0")
-        big_font = QFont("Consolas", 60, QFont.Weight.Bold)
+        big_font = QFont("Consolas", 36, QFont.Weight.Bold)
         big_font.setStyleHint(QFont.StyleHint.Monospace)
         self._big.setFont(big_font)
         self._big.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -56,18 +56,22 @@ class LiveCounter(QWidget):
 
         self._unit = QLabel(unit)
         self._unit.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self._unit.setStyleSheet("font-size: 13pt; color: gray;")
+        self._unit.setStyleSheet("font-size: 11pt; color: gray;")
 
         self._stats = QLabel("min: —    avg: —    max: —")
         self._stats.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self._stats.setStyleSheet("color: #555;")
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(8, 4, 8, 4)
+        layout.setContentsMargins(6, 2, 6, 2)
+        layout.setSpacing(0)
         layout.addWidget(self._title)
         layout.addWidget(self._big)
         layout.addWidget(self._unit)
         layout.addWidget(self._stats)
+
+        # Don't let the counter steal vertical space from the plot below.
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
 
         self._window_max = int(window_samples)
         self._window: list[float] = []
@@ -118,6 +122,9 @@ class ScrollingPlot(pg.PlotWidget):
         self.setLabel("bottom", "Time", units="s")
         self.showGrid(x=True, y=True, alpha=0.3)
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        # Allow the plot to shrink to a small fraction of the screen so
+        # the main window can always fit on shorter displays.
+        self.setMinimumHeight(120)
         self.addLegend()
 
         self._curve = self.plot(

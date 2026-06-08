@@ -1,8 +1,13 @@
-"""Serial interface to the dual-HX711 Arduino sketch.
+"""Serial interface to the dual-HX711 + throttle-servo Arduino sketch.
 
-The Arduino streams lines of the form ``LC,<raw1>,<raw2>``. This module
-parses those lines in a background thread and emits a Qt signal on every
-fresh sample so that the GUI can update without blocking on serial I/O.
+The Arduino streams lines of the form ``LC,<raw1>,<raw2>`` for the load
+cells and ``SV,<angle>`` for servo acknowledgements. This module parses
+those lines in a background thread and emits Qt signals on every fresh
+sample so that the GUI can update without blocking on serial I/O.
+
+The same serial port is also used to send throttle-servo commands of the
+form ``S:<angle>``; writes are serialised behind a lock so the GUI thread
+can call :meth:`LoadCellSerial.set_servo_angle` directly.
 
 Calibration (tare / counts-per-Newton) is applied here so that downstream
 consumers only see physical units (Newtons).
@@ -42,6 +47,9 @@ class LoadCellSerial(QObject):
     -------
     sample : LoadCellSample
         Emitted every time a fresh ``LC,...`` line is parsed.
+    servo_angle : int
+        Emitted with the new servo angle reported by the Arduino on every
+        ``SV,<angle>`` acknowledgement line.
     connection_changed : bool
         Emitted with ``True`` when the port opens, ``False`` when it closes
         (either explicitly or after a read error).
@@ -50,6 +58,7 @@ class LoadCellSerial(QObject):
     """
 
     sample = pyqtSignal(object)
+    servo_angle = pyqtSignal(int)
     connection_changed = pyqtSignal(bool)
     error = pyqtSignal(str)
 
@@ -65,6 +74,12 @@ class LoadCellSerial(QObject):
         self._ser: Optional[serial.Serial] = None
         self._thread: Optional[threading.Thread] = None
         self._stop_event = threading.Event()
+
+        # Serialises ``Serial.write`` calls between the GUI thread
+        # (servo commands) and the reader thread (which never writes,
+        # but we keep the lock for symmetry and to make future commands
+        # safe to add).
+        self._write_lock = threading.Lock()
 
         # Cache the most recent raw values for calibration helpers.
         self._lock = threading.Lock()
@@ -90,6 +105,29 @@ class LoadCellSerial(QObject):
     def latest_raw(self) -> tuple[Optional[int], Optional[int]]:
         with self._lock:
             return self._last_raw1, self._last_raw2
+
+    def set_servo_angle(self, angle_deg: float) -> bool:
+        """Send a throttle-servo angle command to the Arduino.
+
+        The angle is clamped to the hobby-servo range [0, 180] and
+        rounded to the nearest whole degree because the firmware uses
+        ``Servo.write(uint8_t)``.
+
+        Returns ``True`` if a command was actually written to the port.
+        """
+        if self._ser is None or not self._ser.is_open:
+            return False
+
+        clamped = max(0, min(180, int(round(angle_deg))))
+        line = f"S:{clamped}\n".encode("ascii")
+        try:
+            with self._write_lock:
+                self._ser.write(line)
+        except serial.SerialException as exc:
+            log.error("Servo write error: %s", exc)
+            self.error.emit(f"Servo write error: {exc}")
+            return False
+        return True
 
     def open(self, port: str, baud: int = 115_200) -> None:
         if self.is_open:
@@ -156,40 +194,57 @@ class LoadCellSerial(QObject):
             if not line or line.startswith("#"):
                 continue
 
-            parsed = self._parse_line(line)
-            if parsed is None:
-                continue
-
-            raw1, raw2 = parsed
-            with self._lock:
-                self._last_raw1 = raw1
-                self._last_raw2 = raw2
-                cal1 = self._cal1
-                cal2 = self._cal2
-
-            sample = LoadCellSample(
-                raw1=raw1,
-                raw2=raw2,
-                force1_n=_apply_cal(raw1, cal1),
-                force2_n=_apply_cal(raw2, cal2),
-                t_monotonic=time.monotonic(),
-            )
-            self.sample.emit(sample)
+            if line.startswith("LC,"):
+                parsed = self._parse_lc(line)
+                if parsed is None:
+                    continue
+                self._emit_sample(*parsed)
+            elif line.startswith("SV,"):
+                angle = self._parse_sv(line)
+                if angle is not None:
+                    self.servo_angle.emit(angle)
+            # Unknown line types are silently ignored so future firmware
+            # additions don't blow up older hosts.
 
         # Make sure listeners learn about an abrupt disconnect.
         if not self._stop_event.is_set():
             self.connection_changed.emit(False)
 
+    def _emit_sample(self, raw1: int, raw2: int) -> None:
+        with self._lock:
+            self._last_raw1 = raw1
+            self._last_raw2 = raw2
+            cal1 = self._cal1
+            cal2 = self._cal2
+
+        sample = LoadCellSample(
+            raw1=raw1,
+            raw2=raw2,
+            force1_n=_apply_cal(raw1, cal1),
+            force2_n=_apply_cal(raw2, cal2),
+            t_monotonic=time.monotonic(),
+        )
+        self.sample.emit(sample)
+
     @staticmethod
-    def _parse_line(line: str) -> Optional[tuple[int, int]]:
+    def _parse_lc(line: str) -> Optional[tuple[int, int]]:
         # Expected format: "LC,<raw1>,<raw2>"
-        if not line.startswith("LC,"):
-            return None
         parts = line.split(",")
         if len(parts) != 3:
             return None
         try:
             return int(parts[1]), int(parts[2])
+        except ValueError:
+            return None
+
+    @staticmethod
+    def _parse_sv(line: str) -> Optional[int]:
+        # Expected format: "SV,<angle>"
+        parts = line.split(",")
+        if len(parts) != 2:
+            return None
+        try:
+            return int(parts[1])
         except ValueError:
             return None
 

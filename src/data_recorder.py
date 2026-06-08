@@ -1,21 +1,24 @@
-"""CSV recorder for live RPM and torque data.
+"""CSV recorder for live RPM, torque and throttle data.
 
-The recorder subscribes to the two independent sample streams in the app:
+The recorder subscribes to three independent sample streams in the app:
 
 - VESC telemetry (``rpm``), arriving at the VESC poll rate.
 - Load-cell torque (``torque_nm``), arriving at the Arduino sample rate.
+- Throttle command (``throttle_pct``), arriving whenever the user moves
+  the throttle from the GUI or with the keyboard.
 
-Because the two streams are asynchronous, each incoming sample is written
-as its own CSV row. The ``source`` column says which value is *fresh* on
-that row, while the other column carries the most recent value seen so
-far (blank until the first sample of that kind arrives). This keeps every
-raw sample without trying to resample either stream.
+Because the streams are asynchronous, each incoming sample is written as
+its own CSV row. The ``source`` column says which value is *fresh* on
+that row, while the other columns carry the most recent value seen so
+far (blank until the first sample of that kind arrives). This keeps
+every raw sample without trying to resample any stream.
 
 Rows look like::
 
-    timestamp,elapsed_s,source,rpm,torque_nm
-    2026-06-03T01:28:11.412,0.000,rpm,1234.500,
-    2026-06-03T01:28:11.418,0.006,torque,1234.500,1.214000
+    timestamp,elapsed_s,source,rpm,torque_nm,throttle_pct
+    2026-06-03T01:28:11.412,0.000,rpm,1234.500,,
+    2026-06-03T01:28:11.418,0.006,torque,1234.500,1.214000,
+    2026-06-03T01:28:12.013,0.601,throttle,1234.500,1.214000,100.000
 """
 
 from __future__ import annotations
@@ -47,7 +50,14 @@ class DataRecorder(QObject):
     recording_changed = pyqtSignal(bool)
     error = pyqtSignal(str)
 
-    _FIELDNAMES = ["timestamp", "elapsed_s", "source", "rpm", "torque_nm"]
+    _FIELDNAMES = [
+        "timestamp",
+        "elapsed_s",
+        "source",
+        "rpm",
+        "torque_nm",
+        "throttle_pct",
+    ]
 
     def __init__(self, parent: Optional[QObject] = None) -> None:
         super().__init__(parent)
@@ -58,6 +68,7 @@ class DataRecorder(QObject):
         self._row_count: int = 0
         self._latest_rpm: Optional[float] = None
         self._latest_torque: Optional[float] = None
+        self._latest_throttle: Optional[float] = None
 
     # ============================================================ state
 
@@ -99,6 +110,7 @@ class DataRecorder(QObject):
         self._row_count = 0
         self._latest_rpm = None
         self._latest_torque = None
+        self._latest_throttle = None
         self.recording_changed.emit(True)
         log.info("Recording RPM/torque to %s", path)
         return True
@@ -126,6 +138,10 @@ class DataRecorder(QObject):
         self._latest_torque = torque_nm
         self._write_row("torque")
 
+    def on_throttle(self, throttle_pct: float) -> None:
+        self._latest_throttle = float(throttle_pct)
+        self._write_row("throttle")
+
     # ============================================================ internals
 
     def _write_row(self, source: str) -> None:
@@ -136,9 +152,14 @@ class DataRecorder(QObject):
         ts = datetime.now().isoformat(timespec="milliseconds")
         rpm = "" if self._latest_rpm is None else f"{self._latest_rpm:.3f}"
         torque = "" if self._latest_torque is None else f"{self._latest_torque:.6f}"
+        throttle = (
+            "" if self._latest_throttle is None else f"{self._latest_throttle:.3f}"
+        )
 
         try:
-            self._writer.writerow([ts, f"{elapsed:.3f}", source, rpm, torque])
+            self._writer.writerow(
+                [ts, f"{elapsed:.3f}", source, rpm, torque, throttle]
+            )
             self._row_count += 1
         except (OSError, ValueError) as exc:
             log.error("CSV write failed: %s", exc)

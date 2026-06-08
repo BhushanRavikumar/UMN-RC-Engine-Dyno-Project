@@ -4,11 +4,11 @@ A PyQt6 desktop application for a small motor dynamometer. It
 
 - Calibrates and reads **two HX711 load cells** through an Arduino over serial.
 - Converts the measured force into **torque** using a user-supplied lever-arm length.
+- Drives a **throttle servo** on the same Arduino. The user calibrates the
+  servo angles corresponding to 0 % and 100 % throttle, then sets the throttle
+  either by typing a percentage or by nudging it with the arrow keys.
 - Talks to a **VESC**-based motor controller to set RPM / current / brake / handbrake /
   position, full-brake and switch-off (release) the motor.
-- Lets the user **drive the motor with the arrow keys** (up = speed up, down = slow down,
-  left = reverse current bump, right = forward current bump, space = full brake,
-  Esc = release).
 - Shows **live RPM and torque** as big numeric counters and high-refresh-rate
   scrolling plots.
 - **Records RPM and torque to a CSV file** at a path the user chooses.
@@ -24,7 +24,11 @@ A PyQt6 desktop application for a small motor dynamometer. It
 |  Lever arm: 0.10 m |  Live Torque:  1.21 N·m                  |
 |  Torque:  1.21 Nm  |  +------------------------------------+  |
 |--------------------|  |       Torque vs time plot          |  |
-| Motor control      |  +------------------------------------+  |
+| Throttle servo     |  +------------------------------------+  |
+|  Mode: Cal / Thr   |                                          |
+|  Angle / Throttle  |                                          |
+|--------------------|                                          |
+| Motor control      |                                          |
 |  Telemetry / mode  |                                          |
 |  Setpoint [Apply]  |                                          |
 |  [FULL BRAKE]      |                                          |
@@ -48,6 +52,7 @@ A PyQt6 desktop application for a small motor dynamometer. It
 │   └── gui/
 │       ├── main_window.py
 │       ├── loadcell_panel.py
+│       ├── servo_panel.py                # Throttle-servo calibration + control
 │       ├── vesc_panel.py
 │       ├── rpm_view.py
 │       └── torque_view.py
@@ -58,7 +63,10 @@ A PyQt6 desktop application for a small motor dynamometer. It
 ## Quick start
 
 1. Flash `arduino/dual_hx711/dual_hx711.ino` to your Arduino. Wire the two HX711
-   amplifiers to the pins defined at the top of that sketch.
+   amplifiers to the pins defined at the top of that sketch, and connect the
+   throttle servo's signal pin to **D9** (powered from an external 5 V supply
+   with its ground tied to the Arduino's ground). The sketch needs the
+   bundled `Servo` library in addition to Bogdan Necula's `HX711` library.
 2. Connect the VESC's UART to a USB-UART adapter (or use the VESC's built-in USB
    port).
 3. Create a virtual environment and install the dependencies:
@@ -90,20 +98,44 @@ A PyQt6 desktop application for a small motor dynamometer. It
    The slope (counts per Newton) is saved to `config.json`.
 7. Enter the **lever-arm length** in meters. Torque is now computed continuously
    as `|F1 - F2| * L`.
-8. Click anywhere on the **Motor control** panel (lower-left) to give it keyboard
-   focus, then drive with the arrow keys, or type setpoints into the spin boxes.
-9. To log data, open the **Record** menu and choose *Start recording…* (Ctrl+R).
-   Pick a `.csv` path; RPM and torque samples are appended live. Choose
-   *Stop recording* (Ctrl+Shift+R) when done. Each row is
-   `timestamp, elapsed_s, source, rpm, torque_nm`, where `source` marks which
-   value is fresh and the other column carries the most recent reading.
+8. In the **Throttle servo** panel, leave the *Calibration* radio selected and
+   use the angle spin box or the arrow keys (`↑` / `→` and `↓` / `←`, hold
+   `Shift` for a 5× step) to drive the servo. Click *Save as 0 % throttle*
+   when the engine is at idle and *Save as 100 % throttle* when it is at wide
+   open throttle. Both angles are written to `config.json`.
+9. Switch the panel to *Throttle* mode. You have two ways to drive the
+   throttle, and they share the same calibration:
+   - **Type a percentage** (0–100 %) into the spin box.
+   - **Hold the ↑ arrow** to command 100 % throttle for as long as it is
+     held (dead-man style). Release ↑ and the throttle snaps back to 0 %
+     immediately. Press ↓ (or `Space`, or the red button) to slam the
+     throttle to 0 % instantly. Clicking outside the panel or switching
+     back to *Calibration* also releases the hold.
+10. In the **Motor control** panel (lower-left), pick a mode, type a setpoint
+    into the spin box and click *Apply setpoint*. Use the *FULL BRAKE* and
+    *RELEASE* buttons for the corresponding stop actions.
+11. To log data, open the **Record** menu and choose *Start recording…* (Ctrl+R).
+    Pick a `.csv` path; RPM, torque and throttle samples are appended live.
+    Choose *Stop recording* (Ctrl+Shift+R) when done. Each row is
+    `timestamp, elapsed_s, source, rpm, torque_nm, throttle_pct`, where
+    `source` is one of `rpm`, `torque`, or `throttle` and marks which value
+    is fresh on that row; the other columns carry the most recent reading
+    of each signal.
 
 ## Safety
 
-- The arrow-key control sends a *current* command; releasing the key calls
-  `set_current(0)` so the motor coasts. Press **Space** for an active full brake
-  and **Esc** to release the motor completely.
-- Calibration and lever arm are stored in `config.json` next to the executable.
+- The VESC is driven only by the on-screen *Apply setpoint*, *FULL BRAKE* and
+  *RELEASE* buttons; that panel intentionally ignores keyboard input so a stray
+  key press cannot move the motor.
+- The throttle servo *does* respond to the arrow keys, but only when the
+  *Throttle servo* panel has keyboard focus (click anywhere on it first). In
+  *Throttle* mode the keys are configured as a **dead-man** control: holding
+  `↑` commands 100 % throttle, and **releasing** it (or losing focus, or
+  switching modes) immediately snaps the throttle back to 0 %. `↓`, `Space`,
+  the red button, an Arduino disconnect or closing the application also
+  command 0 % throttle.
+- Servo calibration angles, load-cell calibration and lever arm are all stored
+  in `config.json` next to the executable.
 - A watchdog thread re-sends the last command at 50 Hz so the VESC does not
   time out and stop the motor unexpectedly.
 

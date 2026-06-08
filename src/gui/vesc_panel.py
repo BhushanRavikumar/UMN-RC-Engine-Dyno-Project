@@ -5,13 +5,10 @@ Layout:
 - A grid of telemetry read-outs (voltage, currents, duty, temps).
 - A mode selector and a single setpoint spin box whose meaning depends on
   the mode (RPM → integer RPM, Current → Amps, Brake → Amps, etc.).
-- Action buttons: ``Apply``, ``FULL BRAKE`` (Space), ``RELEASE`` (Esc).
-- Live "arrow-key" hint label.
+- Action buttons: ``Apply``, ``FULL BRAKE``, ``RELEASE``.
 
-When the panel has keyboard focus, the arrow keys send relative *current*
-commands (so the user can immediately feel the motor respond). Releasing
-the arrow key falls back to ``set_current(0)`` so the motor coasts —
-nothing keeps spinning by accident if the user tabs away.
+All motor commands are issued via the on-screen controls; the panel does
+not respond to keyboard input.
 """
 
 from __future__ import annotations
@@ -19,8 +16,8 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QFont, QKeyEvent
+from PyQt6.QtCore import pyqtSignal
+from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import (
     QComboBox,
     QDoubleSpinBox,
@@ -59,17 +56,18 @@ class _Readout(QFrame):
         self.setFrameShape(QFrame.Shape.StyledPanel)
 
         self._name_label = QLabel(name)
-        self._name_label.setStyleSheet("color: gray;")
+        self._name_label.setStyleSheet("color: gray; font-size: 9pt;")
         self._value_label = QLabel("—")
-        big_font = QFont("Consolas", 18, QFont.Weight.Bold)
+        big_font = QFont("Consolas", 13, QFont.Weight.Bold)
         big_font.setStyleHint(QFont.StyleHint.Monospace)
         self._value_label.setFont(big_font)
         self._value_label.setStyleSheet(f"color: {color};")
         self._unit_label = QLabel(unit)
-        self._unit_label.setStyleSheet("color: gray;")
+        self._unit_label.setStyleSheet("color: gray; font-size: 9pt;")
 
         v = QVBoxLayout(self)
-        v.setContentsMargins(8, 4, 8, 4)
+        v.setContentsMargins(6, 2, 6, 2)
+        v.setSpacing(0)
         v.addWidget(self._name_label)
         v.addWidget(self._value_label)
         v.addWidget(self._unit_label)
@@ -79,7 +77,7 @@ class _Readout(QFrame):
 
 
 class VescPanel(QWidget):
-    """Telemetry display + setpoint controls + arrow-key driving."""
+    """Telemetry display and on-screen setpoint controls."""
 
     status_message = pyqtSignal(str)
 
@@ -94,9 +92,6 @@ class VescPanel(QWidget):
         self._ctl = controller
         # Tell the controller what counts as "full brake".
         self._ctl.set_max_brake_current(cfg.max_brake_current_a)
-
-        # Need focus for the arrow keys to be delivered to this widget.
-        self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
 
         # ---------- telemetry read-outs ----------
         self._ro_voltage   = _Readout("Battery voltage", "V")
@@ -141,15 +136,15 @@ class VescPanel(QWidget):
         ctl_form.addRow("Setpoint:", self._setpoint_spin)
         ctl_form.addRow("", self._apply_btn)
 
-        self._full_brake_btn = QPushButton("FULL BRAKE  (Space)")
+        self._full_brake_btn = QPushButton("FULL BRAKE")
         self._full_brake_btn.setStyleSheet(
-            "background:#c0392b; color:white; font-weight:bold; padding:8px;"
+            "background:#c0392b; color:white; font-weight:bold; padding:5px;"
         )
         self._full_brake_btn.clicked.connect(self._full_brake)
 
-        self._release_btn = QPushButton("RELEASE  (Esc)")
+        self._release_btn = QPushButton("RELEASE")
         self._release_btn.setStyleSheet(
-            "background:#7f8c8d; color:white; font-weight:bold; padding:8px;"
+            "background:#7f8c8d; color:white; font-weight:bold; padding:5px;"
         )
         self._release_btn.clicked.connect(self._release)
 
@@ -176,18 +171,10 @@ class VescPanel(QWidget):
         self._max_brake_spin.setSuffix(" A")
         self._max_brake_spin.valueChanged.connect(self._on_limits_changed)
 
-        self._arrow_step_spin = QDoubleSpinBox()
-        self._arrow_step_spin.setRange(0.01, 50.0)
-        self._arrow_step_spin.setValue(cfg.arrow_current_step_a)
-        self._arrow_step_spin.setSuffix(" A / press")
-        self._arrow_step_spin.setSingleStep(0.1)
-        self._arrow_step_spin.valueChanged.connect(self._on_limits_changed)
-
         limits_form = QFormLayout()
         limits_form.addRow("Max RPM:",            self._max_rpm_spin)
         limits_form.addRow("Max motor current:", self._max_current_spin)
         limits_form.addRow("Max brake current:", self._max_brake_spin)
-        limits_form.addRow("Arrow-key step:",    self._arrow_step_spin)
 
         limits_box = QGroupBox("Limits")
         limits_box.setLayout(limits_form)
@@ -197,28 +184,16 @@ class VescPanel(QWidget):
         ctl_box_layout.addLayout(ctl_form)
         ctl_box_layout.addLayout(big_btns)
 
-        # ---------- arrow-key hint ----------
-        self._hint = QLabel(
-            "Click here, then drive with the arrow keys:\n"
-            "    ↑ / ↓  ramp current forward / reverse\n"
-            "    →     bump forward    ←  bump reverse\n"
-            "    Space full brake          Esc release"
-        )
-        self._hint.setStyleSheet(
-            "background:#222; color:#ddd; padding:6px; border-radius:4px;"
-        )
-
-        self._arrow_current: float = 0.0
-
         # ---------- layout ----------
         bottom = QHBoxLayout()
         bottom.addWidget(ctl_box, 2)
         bottom.addWidget(limits_box, 1)
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(4, 4, 4, 4)
+        layout.setSpacing(4)
         layout.addWidget(readouts_box)
         layout.addLayout(bottom)
-        layout.addWidget(self._hint)
         layout.addStretch(1)
 
         self._on_mode_changed(0)
@@ -241,8 +216,6 @@ class VescPanel(QWidget):
 
     def _on_connection_changed(self, connected: bool) -> None:
         self.setEnabled(connected)
-        if not connected:
-            self._arrow_current = 0.0
 
     def _on_mode_changed(self, idx: int) -> None:
         mode, _label = _MODE_ORDER[idx]
@@ -293,12 +266,10 @@ class VescPanel(QWidget):
         )
 
     def _full_brake(self) -> None:
-        self._arrow_current = 0.0
         self._ctl.full_brake()
         self.status_message.emit("FULL BRAKE engaged")
 
     def _release(self) -> None:
-        self._arrow_current = 0.0
         self._ctl.release()
         self.status_message.emit("Motor released")
 
@@ -306,53 +277,6 @@ class VescPanel(QWidget):
         self._cfg.max_rpm = float(self._max_rpm_spin.value())
         self._cfg.max_current_a = float(self._max_current_spin.value())
         self._cfg.max_brake_current_a = float(self._max_brake_spin.value())
-        self._cfg.arrow_current_step_a = float(self._arrow_step_spin.value())
         self._ctl.set_max_brake_current(self._cfg.max_brake_current_a)
         # Re-apply current-mode range in case the user is in current mode.
         self._on_mode_changed(self._mode_combo.currentIndex())
-
-    # =================================================== arrow-key control
-
-    def keyPressEvent(self, event: QKeyEvent) -> None:  # noqa: N802
-        if event.isAutoRepeat():
-            event.accept()
-            return
-
-        key = event.key()
-        step = float(self._cfg.arrow_current_step_a)
-        max_i = float(self._cfg.max_current_a)
-
-        if key == Qt.Key.Key_Up:
-            self._arrow_current = min(max_i, self._arrow_current + step)
-            self._ctl.set_current(self._arrow_current)
-            self.status_message.emit(f"Arrow: I = {self._arrow_current:+.2f} A")
-        elif key == Qt.Key.Key_Down:
-            self._arrow_current = max(-max_i, self._arrow_current - step)
-            self._ctl.set_current(self._arrow_current)
-            self.status_message.emit(f"Arrow: I = {self._arrow_current:+.2f} A")
-        elif key == Qt.Key.Key_Right:
-            # Small forward bump on top of whatever's set.
-            self._arrow_current = min(max_i, self._arrow_current + step * 0.5)
-            self._ctl.set_current(self._arrow_current)
-        elif key == Qt.Key.Key_Left:
-            self._arrow_current = max(-max_i, self._arrow_current - step * 0.5)
-            self._ctl.set_current(self._arrow_current)
-        elif key == Qt.Key.Key_Space:
-            self._full_brake()
-        elif key == Qt.Key.Key_Escape:
-            self._release()
-        else:
-            super().keyPressEvent(event)
-            return
-
-        event.accept()
-
-    def keyReleaseEvent(self, event: QKeyEvent) -> None:  # noqa: N802
-        if event.isAutoRepeat():
-            event.accept()
-            return
-        # We deliberately do NOT zero current on key release: the user
-        # may want to hold a setpoint while reading a meter. They can
-        # press Esc to release or Space to brake. This mirrors how VESC
-        # tool behaves with its sliders.
-        super().keyReleaseEvent(event)

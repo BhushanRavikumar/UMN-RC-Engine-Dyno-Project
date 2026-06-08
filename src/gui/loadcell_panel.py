@@ -49,7 +49,7 @@ class _ChannelBox(QGroupBox):
         super().__init__(title, parent)
 
         self._force_label = QLabel("—")
-        self._force_label.setStyleSheet("font-size: 22pt; font-weight: bold;")
+        self._force_label.setStyleSheet("font-size: 16pt; font-weight: bold;")
         self._force_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self._raw_label = QLabel("raw: —")
@@ -136,7 +136,7 @@ class LoadCellPanel(QWidget):
 
         self._torque_label = QLabel("0.000 N·m")
         self._torque_label.setStyleSheet(
-            "font-size: 28pt; font-weight: bold; color: #2566c8;"
+            "font-size: 20pt; font-weight: bold; color: #2566c8;"
         )
         self._torque_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
