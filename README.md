@@ -48,7 +48,7 @@ A PyQt6 desktop application for a small motor dynamometer. It
 │   ├── hardware/
 │   │   ├── loadcell_serial.py          # Arduino HX711 link
 │   │   └── vesc_controller.py          # VESC UART wrapper
-│   ├── data_recorder.py                # RPM / torque CSV logger
+│   ├── data_recorder.py                # RPM / torque / throttle CSV logger
 │   └── gui/
 │       ├── main_window.py
 │       ├── loadcell_panel.py
@@ -56,6 +56,8 @@ A PyQt6 desktop application for a small motor dynamometer. It
 │       ├── vesc_panel.py
 │       ├── rpm_view.py
 │       └── torque_view.py
+├── view_recordings.py                  # Standalone CSV recording viewer
+├── Recordings/                         # Default folder the viewer scans
 ├── requirements.txt
 └── README.md
 ```
@@ -121,6 +123,39 @@ A PyQt6 desktop application for a small motor dynamometer. It
     `source` is one of `rpm`, `torque`, or `throttle` and marks which value
     is fresh on that row; the other columns carry the most recent reading
     of each signal.
+
+## Viewing recordings
+
+A standalone post-processing viewer lives in `view_recordings.py`. It scans
+a folder for the CSVs produced by the live recorder and plots RPM, torque
+and throttle on an interactive pyqtgraph canvas.
+
+```powershell
+# default: scan ./Recordings (latest file first)
+python view_recordings.py
+
+# or point at any folder
+python view_recordings.py "C:\path\to\my\recordings"
+```
+
+The toolbar lets you:
+
+- Pick which recording to display from a drop-down (newest first).
+- *Browse folder…* to switch to a different directory.
+- *Refresh* to re-scan after a new recording is dropped in.
+- Toggle the **Layout**:
+  - **Stacked** — three vertically aligned plots, one per channel, with
+    their X axes linked so panning / zooming one pans all of them. Best
+    when you want to read exact values per channel.
+  - **Overlay** — a single plot with three independent Y axes (RPM on the
+    left, torque and throttle on the right). The channels share an X axis
+    but each keeps its native units, so signals at wildly different
+    scales remain legible.
+
+A crosshair follows the mouse on the plot canvas and the strip above the
+plot shows the value of every channel at the cursor's time in the
+channel's own colour. Standard pyqtgraph mouse interactions apply: scroll
+to zoom, click-and-drag to pan, right-click for export / view-options.
 
 ## Safety
 
