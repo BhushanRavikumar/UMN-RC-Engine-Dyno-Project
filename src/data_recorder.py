@@ -3,7 +3,8 @@
 The recorder subscribes to three independent sample streams in the app:
 
 - VESC telemetry (``rpm``), arriving at the VESC poll rate.
-- Load-cell torque (``torque_nm``), arriving at the Arduino sample rate.
+- Load-cell torque (``torque_mnm`` in millinewton-metres), arriving at
+  the Arduino sample rate.
 - Throttle command (``throttle_pct``), arriving whenever the user moves
   the throttle from the GUI or with the keyboard.
 
@@ -15,10 +16,10 @@ every raw sample without trying to resample any stream.
 
 Rows look like::
 
-    timestamp,elapsed_s,source,rpm,torque_nm,throttle_pct
+    timestamp,elapsed_s,source,rpm,torque_mnm,throttle_pct
     2026-06-03T01:28:11.412,0.000,rpm,1234.500,,
-    2026-06-03T01:28:11.418,0.006,torque,1234.500,1.214000,
-    2026-06-03T01:28:12.013,0.601,throttle,1234.500,1.214000,100.000
+    2026-06-03T01:28:11.418,0.006,torque,1234.500,1214.000,
+    2026-06-03T01:28:12.013,0.601,throttle,1234.500,1214.000,100.000
 """
 
 from __future__ import annotations
@@ -55,7 +56,7 @@ class DataRecorder(QObject):
         "elapsed_s",
         "source",
         "rpm",
-        "torque_nm",
+        "torque_mnm",
         "throttle_pct",
     ]
 
@@ -134,8 +135,8 @@ class DataRecorder(QObject):
         self._latest_rpm = telem.rpm
         self._write_row("rpm")
 
-    def on_torque(self, _t_monotonic: float, torque_nm: float) -> None:
-        self._latest_torque = torque_nm
+    def on_torque(self, _t_monotonic: float, torque_mnm: float) -> None:
+        self._latest_torque = torque_mnm
         self._write_row("torque")
 
     def on_throttle(self, throttle_pct: float) -> None:
@@ -151,7 +152,9 @@ class DataRecorder(QObject):
         elapsed = time.monotonic() - self._start_monotonic
         ts = datetime.now().isoformat(timespec="milliseconds")
         rpm = "" if self._latest_rpm is None else f"{self._latest_rpm:.3f}"
-        torque = "" if self._latest_torque is None else f"{self._latest_torque:.6f}"
+        # ``torque_mnm`` is in millinewton-metres; .3f gives µN·m
+        # resolution, which is well below HX711 noise.
+        torque = "" if self._latest_torque is None else f"{self._latest_torque:.3f}"
         throttle = (
             "" if self._latest_throttle is None else f"{self._latest_throttle:.3f}"
         )

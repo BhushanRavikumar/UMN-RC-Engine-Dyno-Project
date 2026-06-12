@@ -21,8 +21,8 @@ A PyQt6 desktop application for a small motor dynamometer. It
 |  Tare / Calibrate  |  +------------------------------------+  |
 |  LC1: 12.3 N       |  |        RPM vs time plot            |  |
 |  LC2: 11.9 N       |  +------------------------------------+  |
-|  Lever arm: 0.10 m |  Live Torque:  1.21 N·m                  |
-|  Torque:  1.21 Nm  |  +------------------------------------+  |
+|  Lever arm: 0.10 m |  Live Torque:  1214.0 mN·m               |
+|  Torque: 1214 mN·m |  +------------------------------------+  |
 |--------------------|  |       Torque vs time plot          |  |
 | Throttle servo     |  +------------------------------------+  |
 |  Mode: Cal / Thr   |                                          |
@@ -99,7 +99,7 @@ A PyQt6 desktop application for a small motor dynamometer. It
    then place a known mass on each cell and enter the reference value in kg.
    The slope (counts per Newton) is saved to `config.json`.
 7. Enter the **lever-arm length** in meters. Torque is now computed continuously
-   as `|F1 - F2| * L`.
+   as `|F1 - F2| * L * 1000` and reported in millinewton-metres (mN·m).
 8. In the **Throttle servo** panel, leave the *Calibration* radio selected and
    use the angle spin box or the arrow keys (`↑` / `→` and `↓` / `←`, hold
    `Shift` for a 5× step) to drive the servo. Click *Save as 0 % throttle*
@@ -119,10 +119,10 @@ A PyQt6 desktop application for a small motor dynamometer. It
 11. To log data, open the **Record** menu and choose *Start recording…* (Ctrl+R).
     Pick a `.csv` path; RPM, torque and throttle samples are appended live.
     Choose *Stop recording* (Ctrl+Shift+R) when done. Each row is
-    `timestamp, elapsed_s, source, rpm, torque_nm, throttle_pct`, where
+    `timestamp, elapsed_s, source, rpm, torque_mnm, throttle_pct`, where
     `source` is one of `rpm`, `torque`, or `throttle` and marks which value
     is fresh on that row; the other columns carry the most recent reading
-    of each signal.
+    of each signal. Torque is stored in millinewton-metres (mN·m).
 
 ## Viewing recordings
 
@@ -156,6 +156,10 @@ A crosshair follows the mouse on the plot canvas and the strip above the
 plot shows the value of every channel at the cursor's time in the
 channel's own colour. Standard pyqtgraph mouse interactions apply: scroll
 to zoom, click-and-drag to pan, right-click for export / view-options.
+
+Older recordings that pre-date the torque-unit rename used a `torque_nm`
+column in N·m; the viewer transparently scales those up by 1000 so every
+file is displayed in mN·m regardless of when it was captured.
 
 ## Safety
 

@@ -9,8 +9,9 @@ The panel exposes two columns (one per cell) with:
   current raw count and the tare offset.
 
 A lever-arm spin box at the bottom converts the absolute difference of
-the two forces to a torque in N·m, which is also published over the ``torque_changed``
-signal so other widgets (e.g. the data logger) can listen in.
+the two forces to a torque in mN·m, which is also published over the
+``torque_changed`` signal so other widgets (e.g. the data logger) can
+listen in.
 """
 
 from __future__ import annotations
@@ -105,8 +106,9 @@ class _ChannelBox(QGroupBox):
 class LoadCellPanel(QWidget):
     """Top-level widget tying both channels together with a lever arm input."""
 
-    # (t_monotonic, torque_nm) — paired so plots can timestamp samples
+    # (t_monotonic, torque_mnm) — paired so plots can timestamp samples
     # consistently with the load-cell stream rather than at receive time.
+    # Torque is published in millinewton-metres.
     torque_changed = pyqtSignal(float, float)
 
     def __init__(
@@ -134,7 +136,7 @@ class LoadCellPanel(QWidget):
         self._lever_spin.setValue(cfg.lever_arm_m)
         self._lever_spin.valueChanged.connect(self._on_lever_changed)
 
-        self._torque_label = QLabel("0.000 N·m")
+        self._torque_label = QLabel("0.0 mN·m")
         self._torque_label.setStyleSheet(
             "font-size: 20pt; font-weight: bold; color: #2566c8;"
         )
@@ -172,9 +174,15 @@ class LoadCellPanel(QWidget):
         self._lc1.update_reading(sample.raw1, sample.force1_n)
         self._lc2.update_reading(sample.raw2, sample.force2_n)
 
-        torque = abs(sample.force1_n - sample.force2_n) * self._cfg.lever_arm_m
-        self._torque_label.setText(f"{torque:+.3f} N·m")
-        self.torque_changed.emit(sample.t_monotonic, torque)
+        # Compute in N·m, then scale to mN·m for display, CSV and any
+        # downstream consumers.
+        torque_mnm = (
+            abs(sample.force1_n - sample.force2_n)
+            * self._cfg.lever_arm_m
+            * 1000.0
+        )
+        self._torque_label.setText(f"{torque_mnm:+.1f} mN·m")
+        self.torque_changed.emit(sample.t_monotonic, torque_mnm)
 
     def _on_lever_changed(self, value: float) -> None:
         self._cfg.lever_arm_m = float(value)

@@ -1,9 +1,13 @@
 """Interactive viewer for dyno CSV recordings.
 
 The companion to :mod:`src.data_recorder`. Reads any CSV produced by the
-live recorder (columns ``timestamp, elapsed_s, source, rpm, torque_nm,
+live recorder (columns ``timestamp, elapsed_s, source, rpm, torque_mnm,
 throttle_pct``) and plots the three telemetry channels — RPM, torque and
 throttle — on an interactive pyqtgraph canvas.
+
+Older recordings that pre-date the unit rename used a ``torque_nm``
+column in N·m. The loader transparently scales those values up by 1000
+so every channel is displayed in mN·m regardless of the file's age.
 
 The viewer offers two layout modes:
 
@@ -11,7 +15,7 @@ The viewer offers two layout modes:
   with its own Y scale. Best for reading exact values per channel.
 - **Overlay**  — a single plot with three independent Y axes (one per
   channel) so signals at wildly different scales (RPM in the thousands,
-  torque in single N·m, throttle in 0–100 %) can be compared visually
+  torque in mN·m, throttle in 0–100 %) can be compared visually
   without sacrificing their native units.
 
 The mouse moves a crosshair across all visible curves; a live read-out
@@ -59,9 +63,9 @@ log = logging.getLogger(__name__)
 # crosshair read-out). Order here matches the stacked-plot order from
 # top to bottom and the overlay axis order from left to right.
 CHANNELS: list[tuple[str, str, str, str, str]] = [
-    ("rpm",          "RPM",      "#2ed573", "rpm", "+9.1f"),
-    ("torque_nm",    "Torque",   "#ffa502", "N·m", "+8.3f"),
-    ("throttle_pct", "Throttle", "#1e90ff", "%",   "+6.1f"),
+    ("rpm",          "RPM",      "#2ed573", "rpm",  "+9.1f"),
+    ("torque_mnm",   "Torque",   "#ffa502", "mN·m", "+8.1f"),
+    ("throttle_pct", "Throttle", "#1e90ff", "%",    "+6.1f"),
 ]
 
 
@@ -72,14 +76,24 @@ def load_csv(path: Path) -> dict[str, np.ndarray]:
 
     Returns a dict with keys ``t`` and one entry per CSV column listed in
     :data:`CHANNELS`. Each value is a numpy array of the same length;
-    missing cells become ``NaN`` so matplotlib / pyqtgraph can mask them
-    automatically.
+    missing cells become ``NaN`` so pyqtgraph can mask them automatically.
+
+    Backward compatibility: recordings predating the torque-unit rename
+    contain a ``torque_nm`` column in N·m instead of the current
+    ``torque_mnm`` column in millinewton-metres. When the loader sees an
+    old-style file it reads from ``torque_nm`` and multiplies by 1000 so
+    the rest of the viewer can pretend every file is the new format.
     """
     t_vals: list[float] = []
     cols: dict[str, list[float]] = {name: [] for name, *_ in CHANNELS}
 
     with path.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames or []
+        legacy_torque = (
+            "torque_mnm" not in fieldnames and "torque_nm" in fieldnames
+        )
+
         for row in reader:
             try:
                 elapsed = float(row["elapsed_s"])
@@ -87,13 +101,19 @@ def load_csv(path: Path) -> dict[str, np.ndarray]:
                 continue
             t_vals.append(elapsed)
             for name, *_ in CHANNELS:
-                raw = row.get(name, "") or ""
-                raw = raw.strip()
+                # Old-format CSVs supply N·m under a different column
+                # name; scale up to mN·m on the fly.
+                if name == "torque_mnm" and legacy_torque:
+                    csv_col, scale = "torque_nm", 1000.0
+                else:
+                    csv_col, scale = name, 1.0
+
+                raw = (row.get(csv_col) or "").strip()
                 if raw == "":
                     cols[name].append(float("nan"))
                 else:
                     try:
-                        cols[name].append(float(raw))
+                        cols[name].append(float(raw) * scale)
                     except ValueError:
                         cols[name].append(float("nan"))
 
