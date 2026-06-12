@@ -177,7 +177,7 @@ class LoadCellPanel(QWidget):
         # Compute in N·m, then scale to mN·m for display, CSV and any
         # downstream consumers.
         torque_mnm = (
-            abs(sample.force1_n - sample.force2_n)
+            (sample.force1_n - sample.force2_n)
             * self._cfg.lever_arm_m
             * 1000.0
         )
