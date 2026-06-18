@@ -9,9 +9,9 @@
       "source_file": "src/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_init",
       "community": 13,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "src_init"
     },
     {
       "label": "Motor dyno GUI application package.",
@@ -19,9 +19,9 @@
       "source_file": "src/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_init_rationale_1",
       "community": 13,
-      "norm_label": "motor dyno gui application package."
+      "norm_label": "motor dyno gui application package.",
+      "id": "src_init_rationale_1"
     },
     {
       "label": "config.py",
@@ -29,9 +29,9 @@
       "source_file": "src/config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_config",
       "community": 3,
-      "norm_label": "config.py"
+      "norm_label": "config.py",
+      "id": "src_config"
     },
     {
       "label": "LoadCellCalibration",
@@ -39,9 +39,9 @@
       "source_file": "src/config.py",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "src_config_loadcellcalibration",
       "community": 3,
-      "norm_label": "loadcellcalibration"
+      "norm_label": "loadcellcalibration",
+      "id": "src_config_loadcellcalibration"
     },
     {
       "label": "AppConfig",
@@ -49,9 +49,9 @@
       "source_file": "src/config.py",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "src_config_appconfig",
-      "community": 5,
-      "norm_label": "appconfig"
+      "community": 10,
+      "norm_label": "appconfig",
+      "id": "src_config_appconfig"
     },
     {
       "label": ".default_path()",
@@ -59,9 +59,9 @@
       "source_file": "src/config.py",
       "source_location": "L71",
       "_origin": "ast",
-      "id": "src_config_appconfig_default_path",
-      "community": 5,
-      "norm_label": ".default_path()"
+      "community": 10,
+      "norm_label": ".default_path()",
+      "id": "src_config_appconfig_default_path"
     },
     {
       "label": "Path",
@@ -69,9 +69,9 @@
       "source_file": "src/config.py",
       "source_location": "L71",
       "_origin": "ast",
-      "id": "src_config_py_path",
-      "community": 5,
-      "norm_label": "path"
+      "community": 10,
+      "norm_label": "path",
+      "id": "src_config_py_path"
     },
     {
       "label": ".load()",
@@ -79,9 +79,9 @@
       "source_file": "src/config.py",
       "source_location": "L75",
       "_origin": "ast",
-      "id": "src_config_appconfig_load",
-      "community": 5,
-      "norm_label": ".load()"
+      "community": 10,
+      "norm_label": ".load()",
+      "id": "src_config_appconfig_load"
     },
     {
       "label": ".save()",
@@ -89,9 +89,9 @@
       "source_file": "src/config.py",
       "source_location": "L95",
       "_origin": "ast",
-      "id": "src_config_appconfig_save",
-      "community": 5,
-      "norm_label": ".save()"
+      "community": 10,
+      "norm_label": ".save()",
+      "id": "src_config_appconfig_save"
     },
     {
       "label": "Persistent JSON-backed application settings.  The config file lives next to th",
@@ -99,9 +99,9 @@
       "source_file": "src/config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_config_rationale_1",
       "community": 3,
-      "norm_label": "persistent json-backed application settings.  the config file lives next to th"
+      "norm_label": "persistent json-backed application settings.  the config file lives next to th",
+      "id": "src_config_rationale_1"
     },
     {
       "label": "Two-point linear calibration for a single load cell.      The transfer functio",
@@ -109,9 +109,9 @@
       "source_file": "src/config.py",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "src_config_rationale_22",
       "community": 3,
-      "norm_label": "two-point linear calibration for a single load cell.      the transfer functio"
+      "norm_label": "two-point linear calibration for a single load cell.      the transfer functio",
+      "id": "src_config_rationale_22"
     },
     {
       "label": "All persisted user settings.",
@@ -119,9 +119,9 @@
       "source_file": "src/config.py",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "src_config_rationale_38",
-      "community": 5,
-      "norm_label": "all persisted user settings."
+      "community": 10,
+      "norm_label": "all persisted user settings.",
+      "id": "src_config_rationale_38"
     },
     {
       "label": "data_recorder.py",
@@ -129,9 +129,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_data_recorder",
-      "community": 8,
-      "norm_label": "data_recorder.py"
+      "community": 0,
+      "norm_label": "data_recorder.py",
+      "id": "src_data_recorder"
     },
     {
       "label": "DataRecorder",
@@ -139,9 +139,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder",
       "community": 8,
-      "norm_label": "datarecorder"
+      "norm_label": "datarecorder",
+      "id": "src_data_recorder_datarecorder"
     },
     {
       "label": "QObject",
@@ -149,9 +149,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "qobject",
-      "community": 6,
-      "norm_label": "qobject"
+      "community": 8,
+      "norm_label": "qobject",
+      "id": "qobject"
     },
     {
       "label": ".__init__()",
@@ -159,9 +159,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_init",
-      "community": 6,
-      "norm_label": ".__init__()"
+      "community": 8,
+      "norm_label": ".__init__()",
+      "id": "src_data_recorder_datarecorder_init"
     },
     {
       "label": ".is_recording()",
@@ -169,9 +169,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_is_recording",
       "community": 8,
-      "norm_label": ".is_recording()"
+      "norm_label": ".is_recording()",
+      "id": "src_data_recorder_datarecorder_is_recording"
     },
     {
       "label": ".path()",
@@ -179,9 +179,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_path",
       "community": 8,
-      "norm_label": ".path()"
+      "norm_label": ".path()",
+      "id": "src_data_recorder_datarecorder_path"
     },
     {
       "label": ".row_count()",
@@ -189,9 +189,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L85",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_row_count",
       "community": 8,
-      "norm_label": ".row_count()"
+      "norm_label": ".row_count()",
+      "id": "src_data_recorder_datarecorder_row_count"
     },
     {
       "label": ".start()",
@@ -199,9 +199,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L90",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_start",
       "community": 8,
-      "norm_label": ".start()"
+      "norm_label": ".start()",
+      "id": "src_data_recorder_datarecorder_start"
     },
     {
       "label": ".stop()",
@@ -209,9 +209,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L119",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_stop",
       "community": 8,
-      "norm_label": ".stop()"
+      "norm_label": ".stop()",
+      "id": "src_data_recorder_datarecorder_stop"
     },
     {
       "label": ".on_rpm()",
@@ -219,9 +219,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L134",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_on_rpm",
       "community": 8,
-      "norm_label": ".on_rpm()"
+      "norm_label": ".on_rpm()",
+      "id": "src_data_recorder_datarecorder_on_rpm"
     },
     {
       "label": "VescTelemetry",
@@ -229,9 +229,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L134",
       "_origin": "ast",
-      "id": "src_data_recorder_py_vesctelemetry",
       "community": 8,
-      "norm_label": "vesctelemetry"
+      "norm_label": "vesctelemetry",
+      "id": "src_data_recorder_py_vesctelemetry"
     },
     {
       "label": ".on_torque()",
@@ -239,9 +239,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L138",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_on_torque",
       "community": 8,
-      "norm_label": ".on_torque()"
+      "norm_label": ".on_torque()",
+      "id": "src_data_recorder_datarecorder_on_torque"
     },
     {
       "label": ".on_throttle()",
@@ -249,9 +249,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L142",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_on_throttle",
       "community": 8,
-      "norm_label": ".on_throttle()"
+      "norm_label": ".on_throttle()",
+      "id": "src_data_recorder_datarecorder_on_throttle"
     },
     {
       "label": "._write_row()",
@@ -259,9 +259,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L148",
       "_origin": "ast",
-      "id": "src_data_recorder_datarecorder_write_row",
       "community": 8,
-      "norm_label": "._write_row()"
+      "norm_label": "._write_row()",
+      "id": "src_data_recorder_datarecorder_write_row"
     },
     {
       "label": "CSV recorder for live RPM, torque and throttle data.  The recorder subscribes",
@@ -269,9 +269,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_data_recorder_rationale_1",
-      "community": 8,
-      "norm_label": "csv recorder for live rpm, torque and throttle data.  the recorder subscribes"
+      "community": 0,
+      "norm_label": "csv recorder for live rpm, torque and throttle data.  the recorder subscribes",
+      "id": "src_data_recorder_rationale_1"
     },
     {
       "label": "Append-only CSV logger for RPM and torque samples.      Signals     -------",
@@ -279,9 +279,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "src_data_recorder_rationale_41",
       "community": 8,
-      "norm_label": "append-only csv logger for rpm and torque samples.      signals     -------"
+      "norm_label": "append-only csv logger for rpm and torque samples.      signals     -------",
+      "id": "src_data_recorder_rationale_41"
     },
     {
       "label": "Open ``path`` for writing and emit the CSV header.          Returns ``True`` o",
@@ -289,9 +289,9 @@
       "source_file": "src/data_recorder.py",
       "source_location": "L91",
       "_origin": "ast",
-      "id": "src_data_recorder_rationale_91",
       "community": 8,
-      "norm_label": "open ``path`` for writing and emit the csv header.          returns ``true`` o"
+      "norm_label": "open ``path`` for writing and emit the csv header.          returns ``true`` o",
+      "id": "src_data_recorder_rationale_91"
     },
     {
       "label": "__init__.py",
@@ -299,9 +299,9 @@
       "source_file": "src/gui/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_init",
       "community": 11,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "gui_init"
     },
     {
       "label": "PyQt6 GUI components for the motor dyno application.",
@@ -309,159 +309,129 @@
       "source_file": "src/gui/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_init_rationale_1",
       "community": 11,
-      "norm_label": "pyqt6 gui components for the motor dyno application."
+      "norm_label": "pyqt6 gui components for the motor dyno application.",
+      "id": "gui_init_rationale_1"
     },
     {
-      "label": "connection_panel.py",
+      "label": "connection_dialog.py",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
+      "source_file": "src/gui/connection_dialog.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_connection_panel",
       "community": 9,
-      "norm_label": "connection_panel.py"
+      "norm_label": "connection_dialog.py",
+      "id": "gui_connection_dialog"
     },
     {
       "label": "ConnectionChoice",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L28",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L20",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionchoice",
       "community": 9,
-      "norm_label": "connectionchoice"
+      "norm_label": "connectionchoice",
+      "id": "gui_connection_dialog_connectionchoice"
     },
     {
-      "label": "ConnectionPanel",
+      "label": "ConnectionDialog",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L35",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L27",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel",
       "community": 9,
-      "norm_label": "connectionpanel"
+      "norm_label": "connectiondialog",
+      "id": "gui_connection_dialog_connectiondialog"
     },
     {
-      "label": "QWidget",
+      "label": "QDialog",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "qwidget",
-      "community": 1,
-      "norm_label": "qwidget"
+      "community": 9,
+      "norm_label": "qdialog",
+      "id": "qdialog"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L48",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L32",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_init",
       "community": 9,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_connection_dialog_connectiondialog_init"
     },
     {
       "label": "._make_baud_combo()",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L101",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L77",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_make_baud_combo",
       "community": 9,
-      "norm_label": "._make_baud_combo()"
+      "norm_label": "._make_baud_combo()",
+      "id": "gui_connection_dialog_connectiondialog_make_baud_combo"
     },
     {
       "label": "QComboBox",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L101",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L77",
       "_origin": "ast",
-      "id": "qcombobox",
       "community": 9,
-      "norm_label": "qcombobox"
+      "norm_label": "qcombobox",
+      "id": "qcombobox"
     },
     {
       "label": "._refresh_ports()",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L109",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L85",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_refresh_ports",
       "community": 9,
-      "norm_label": "._refresh_ports()"
+      "norm_label": "._refresh_ports()",
+      "id": "gui_connection_dialog_connectiondialog_refresh_ports"
     },
     {
       "label": "._select_or_insert()",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L119",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L95",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_select_or_insert",
       "community": 9,
-      "norm_label": "._select_or_insert()"
+      "norm_label": "._select_or_insert()",
+      "id": "gui_connection_dialog_connectiondialog_select_or_insert"
     },
     {
       "label": ".choice()",
       "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L127",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L102",
       "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_choice",
       "community": 9,
-      "norm_label": ".choice()"
+      "norm_label": ".choice()",
+      "id": "gui_connection_dialog_connectiondialog_choice"
     },
     {
-      "label": "._emit_connect()",
-      "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L135",
-      "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_emit_connect",
-      "community": 9,
-      "norm_label": "._emit_connect()"
-    },
-    {
-      "label": ".set_status()",
-      "file_type": "code",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L139",
-      "_origin": "ast",
-      "id": "gui_connection_panel_connectionpanel_set_status",
-      "community": 9,
-      "norm_label": ".set_status()"
-    },
-    {
-      "label": "Embedded panel for picking the serial ports for the Arduino and the VESC.  Thi",
+      "label": "Modal dialog for picking the serial ports for the Arduino and the VESC.",
       "file_type": "rationale",
-      "source_file": "src/gui/connection_panel.py",
+      "source_file": "src/gui/connection_dialog.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_connection_panel_rationale_1",
       "community": 9,
-      "norm_label": "embedded panel for picking the serial ports for the arduino and the vesc.  thi"
+      "norm_label": "modal dialog for picking the serial ports for the arduino and the vesc.",
+      "id": "gui_connection_dialog_rationale_1"
     },
     {
-      "label": "In-window controls to pick the two serial ports and connect.      Emits :pyatt",
+      "label": "Lets the user pick the two serial ports without typing them by hand.",
       "file_type": "rationale",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L36",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L28",
       "_origin": "ast",
-      "id": "gui_connection_panel_rationale_36",
       "community": 9,
-      "norm_label": "in-window controls to pick the two serial ports and connect.      emits :pyatt"
-    },
-    {
-      "label": "Update the small status line shown beneath the buttons.",
-      "file_type": "rationale",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L141",
-      "_origin": "ast",
-      "id": "gui_connection_panel_rationale_141",
-      "community": 9,
-      "norm_label": "update the small status line shown beneath the buttons."
+      "norm_label": "lets the user pick the two serial ports without typing them by hand.",
+      "id": "gui_connection_dialog_rationale_28"
     },
     {
       "label": "loadcell_panel.py",
@@ -469,9 +439,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_loadcell_panel",
       "community": 3,
-      "norm_label": "loadcell_panel.py"
+      "norm_label": "loadcell_panel.py",
+      "id": "gui_loadcell_panel"
     },
     {
       "label": "_ChannelBox",
@@ -479,9 +449,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_channelbox",
       "community": 3,
-      "norm_label": "_channelbox"
+      "norm_label": "_channelbox",
+      "id": "gui_loadcell_panel_channelbox"
     },
     {
       "label": ".__init__()",
@@ -489,9 +459,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_channelbox_init",
       "community": 3,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_loadcell_panel_channelbox_init"
     },
     {
       "label": "QWidget",
@@ -499,9 +469,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "src_gui_loadcell_panel_py_qwidget",
       "community": 3,
-      "norm_label": "qwidget"
+      "norm_label": "qwidget",
+      "id": "src_gui_loadcell_panel_py_qwidget"
     },
     {
       "label": "._on_calibrate_clicked()",
@@ -509,9 +479,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L83",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_channelbox_on_calibrate_clicked",
       "community": 3,
-      "norm_label": "._on_calibrate_clicked()"
+      "norm_label": "._on_calibrate_clicked()",
+      "id": "gui_loadcell_panel_channelbox_on_calibrate_clicked"
     },
     {
       "label": ".update_reading()",
@@ -519,9 +489,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L96",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_channelbox_update_reading",
       "community": 3,
-      "norm_label": ".update_reading()"
+      "norm_label": ".update_reading()",
+      "id": "gui_loadcell_panel_channelbox_update_reading"
     },
     {
       "label": ".update_calibration()",
@@ -529,9 +499,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L100",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_channelbox_update_calibration",
       "community": 3,
-      "norm_label": ".update_calibration()"
+      "norm_label": ".update_calibration()",
+      "id": "gui_loadcell_panel_channelbox_update_calibration"
     },
     {
       "label": "LoadCellCalibration",
@@ -539,9 +509,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L100",
       "_origin": "ast",
-      "id": "src_gui_loadcell_panel_py_loadcellcalibration",
       "community": 3,
-      "norm_label": "loadcellcalibration"
+      "norm_label": "loadcellcalibration",
+      "id": "src_gui_loadcell_panel_py_loadcellcalibration"
     },
     {
       "label": "LoadCellPanel",
@@ -549,9 +519,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L106",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_loadcellpanel",
       "community": 3,
-      "norm_label": "loadcellpanel"
+      "norm_label": "loadcellpanel",
+      "id": "gui_loadcell_panel_loadcellpanel"
     },
     {
       "label": ".__init__()",
@@ -559,9 +529,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_loadcellpanel_init",
       "community": 3,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_loadcell_panel_loadcellpanel_init"
     },
     {
       "label": "AppConfig",
@@ -569,9 +539,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "src_gui_loadcell_panel_py_appconfig",
       "community": 3,
-      "norm_label": "appconfig"
+      "norm_label": "appconfig",
+      "id": "src_gui_loadcell_panel_py_appconfig"
     },
     {
       "label": "LoadCellSerial",
@@ -579,9 +549,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "src_gui_loadcell_panel_py_loadcellserial",
       "community": 3,
-      "norm_label": "loadcellserial"
+      "norm_label": "loadcellserial",
+      "id": "src_gui_loadcell_panel_py_loadcellserial"
     },
     {
       "label": "._on_sample()",
@@ -589,9 +559,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L172",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_loadcellpanel_on_sample",
       "community": 3,
-      "norm_label": "._on_sample()"
+      "norm_label": "._on_sample()",
+      "id": "gui_loadcell_panel_loadcellpanel_on_sample"
     },
     {
       "label": "LoadCellSample",
@@ -599,9 +569,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L172",
       "_origin": "ast",
-      "id": "loadcellsample",
       "community": 3,
-      "norm_label": "loadcellsample"
+      "norm_label": "loadcellsample",
+      "id": "loadcellsample"
     },
     {
       "label": "._on_lever_changed()",
@@ -609,9 +579,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L187",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_loadcellpanel_on_lever_changed",
       "community": 3,
-      "norm_label": "._on_lever_changed()"
+      "norm_label": "._on_lever_changed()",
+      "id": "gui_loadcell_panel_loadcellpanel_on_lever_changed"
     },
     {
       "label": "._tare()",
@@ -619,9 +589,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L190",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_loadcellpanel_tare",
       "community": 3,
-      "norm_label": "._tare()"
+      "norm_label": "._tare()",
+      "id": "gui_loadcell_panel_loadcellpanel_tare"
     },
     {
       "label": "._calibrate()",
@@ -629,9 +599,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L208",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_loadcellpanel_calibrate",
       "community": 3,
-      "norm_label": "._calibrate()"
+      "norm_label": "._calibrate()",
+      "id": "gui_loadcell_panel_loadcellpanel_calibrate"
     },
     {
       "label": "GUI panel for load-cell calibration and live force / torque display.  The pane",
@@ -639,9 +609,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_rationale_1",
       "community": 3,
-      "norm_label": "gui panel for load-cell calibration and live force / torque display.  the pane"
+      "norm_label": "gui panel for load-cell calibration and live force / torque display.  the pane",
+      "id": "gui_loadcell_panel_rationale_1"
     },
     {
       "label": "One per load cell: shows force, has Tare and Calibrate buttons.",
@@ -649,9 +619,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_rationale_44",
       "community": 3,
-      "norm_label": "one per load cell: shows force, has tare and calibrate buttons."
+      "norm_label": "one per load cell: shows force, has tare and calibrate buttons.",
+      "id": "gui_loadcell_panel_rationale_44"
     },
     {
       "label": "Top-level widget tying both channels together with a lever arm input.",
@@ -659,9 +629,9 @@
       "source_file": "src/gui/loadcell_panel.py",
       "source_location": "L107",
       "_origin": "ast",
-      "id": "gui_loadcell_panel_rationale_107",
       "community": 3,
-      "norm_label": "top-level widget tying both channels together with a lever arm input."
+      "norm_label": "top-level widget tying both channels together with a lever arm input.",
+      "id": "gui_loadcell_panel_rationale_107"
     },
     {
       "label": "main_window.py",
@@ -669,19 +639,19 @@
       "source_file": "src/gui/main_window.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_main_window",
       "community": 9,
-      "norm_label": "main_window.py"
+      "norm_label": "main_window.py",
+      "id": "gui_main_window"
     },
     {
       "label": "MainWindow",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L55",
+      "source_location": "L54",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow",
       "community": 5,
-      "norm_label": "mainwindow"
+      "norm_label": "mainwindow",
+      "id": "gui_main_window_mainwindow"
     },
     {
       "label": "QMainWindow",
@@ -689,239 +659,219 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "qmainwindow",
       "community": 5,
-      "norm_label": "qmainwindow"
+      "norm_label": "qmainwindow",
+      "id": "qmainwindow"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L63",
+      "source_location": "L62",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_init",
-      "community": 9,
-      "norm_label": ".__init__()"
+      "community": 5,
+      "norm_label": ".__init__()",
+      "id": "gui_main_window_mainwindow_init"
     },
     {
       "label": "AppConfig",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L63",
+      "source_location": "L62",
       "_origin": "ast",
-      "id": "src_gui_main_window_py_appconfig",
-      "community": 9,
-      "norm_label": "appconfig"
+      "community": 5,
+      "norm_label": "appconfig",
+      "id": "src_gui_main_window_py_appconfig"
     },
     {
       "label": "._size_to_screen()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L185",
+      "source_location": "L171",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_size_to_screen",
-      "community": 9,
-      "norm_label": "._size_to_screen()"
+      "community": 5,
+      "norm_label": "._size_to_screen()",
+      "id": "gui_main_window_mainwindow_size_to_screen"
     },
     {
       "label": "._wrap_in_group()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L210",
+      "source_location": "L196",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_wrap_in_group",
-      "community": 9,
-      "norm_label": "._wrap_in_group()"
+      "community": 5,
+      "norm_label": "._wrap_in_group()",
+      "id": "gui_main_window_mainwindow_wrap_in_group"
     },
     {
       "label": "QWidget",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L210",
+      "source_location": "L196",
       "_origin": "ast",
-      "id": "src_gui_main_window_py_qwidget",
-      "community": 9,
-      "norm_label": "qwidget"
+      "community": 5,
+      "norm_label": "qwidget",
+      "id": "src_gui_main_window_py_qwidget"
     },
     {
       "label": "QGroupBox",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L210",
+      "source_location": "L196",
       "_origin": "ast",
-      "id": "src_gui_main_window_py_qgroupbox",
       "community": 2,
-      "norm_label": "qgroupbox"
+      "norm_label": "qgroupbox",
+      "id": "src_gui_main_window_py_qgroupbox"
     },
     {
       "label": "._build_menus()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L220",
+      "source_location": "L206",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_build_menus",
-      "community": 9,
-      "norm_label": "._build_menus()"
+      "community": 5,
+      "norm_label": "._build_menus()",
+      "id": "gui_main_window_mainwindow_build_menus"
     },
     {
-      "label": "._on_connect_requested()",
+      "label": "._open_connection_dialog()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L253",
+      "source_location": "L249",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_on_connect_requested",
-      "community": 9,
-      "norm_label": "._on_connect_requested()"
-    },
-    {
-      "label": "ConnectionChoice",
-      "file_type": "code",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L253",
-      "_origin": "ast",
-      "id": "connectionchoice",
-      "community": 9,
-      "norm_label": "connectionchoice"
+      "community": 5,
+      "norm_label": "._open_connection_dialog()",
+      "id": "gui_main_window_mainwindow_open_connection_dialog"
     },
     {
       "label": "._disconnect_all()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L268",
+      "source_location": "L275",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_disconnect_all",
       "community": 5,
-      "norm_label": "._disconnect_all()"
+      "norm_label": "._disconnect_all()",
+      "id": "gui_main_window_mainwindow_disconnect_all"
     },
     {
       "label": "._start_recording()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L274",
+      "source_location": "L281",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_start_recording",
       "community": 5,
-      "norm_label": "._start_recording()"
+      "norm_label": "._start_recording()",
+      "id": "gui_main_window_mainwindow_start_recording"
     },
     {
       "label": "._stop_recording()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L292",
+      "source_location": "L299",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_stop_recording",
       "community": 5,
-      "norm_label": "._stop_recording()"
+      "norm_label": "._stop_recording()",
+      "id": "gui_main_window_mainwindow_stop_recording"
     },
     {
       "label": "._on_recording_changed()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L301",
+      "source_location": "L308",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_on_recording_changed",
       "community": 5,
-      "norm_label": "._on_recording_changed()"
+      "norm_label": "._on_recording_changed()",
+      "id": "gui_main_window_mainwindow_on_recording_changed"
     },
     {
       "label": "._save_settings()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L312",
+      "source_location": "L319",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_save_settings",
       "community": 5,
-      "norm_label": "._save_settings()"
+      "norm_label": "._save_settings()",
+      "id": "gui_main_window_mainwindow_save_settings"
     },
     {
       "label": "._on_arduino_conn()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L319",
+      "source_location": "L326",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_on_arduino_conn",
       "community": 5,
-      "norm_label": "._on_arduino_conn()"
+      "norm_label": "._on_arduino_conn()",
+      "id": "gui_main_window_mainwindow_on_arduino_conn"
     },
     {
       "label": "._on_vesc_conn()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L331",
+      "source_location": "L336",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_on_vesc_conn",
       "community": 5,
-      "norm_label": "._on_vesc_conn()"
-    },
-    {
-      "label": "._update_conn_panel_status()",
-      "file_type": "code",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L341",
-      "_origin": "ast",
-      "id": "gui_main_window_mainwindow_update_conn_panel_status",
-      "community": 5,
-      "norm_label": "._update_conn_panel_status()"
+      "norm_label": "._on_vesc_conn()",
+      "id": "gui_main_window_mainwindow_on_vesc_conn"
     },
     {
       "label": "._on_serial_error()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L349",
+      "source_location": "L344",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_on_serial_error",
       "community": 5,
-      "norm_label": "._on_serial_error()"
+      "norm_label": "._on_serial_error()",
+      "id": "gui_main_window_mainwindow_on_serial_error"
     },
     {
       "label": "._show_about()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L353",
+      "source_location": "L348",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_show_about",
       "community": 5,
-      "norm_label": "._show_about()"
+      "norm_label": "._show_about()",
+      "id": "gui_main_window_mainwindow_show_about"
     },
     {
       "label": ".closeEvent()",
       "file_type": "code",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L364",
+      "source_location": "L359",
       "_origin": "ast",
-      "id": "gui_main_window_mainwindow_closeevent",
       "community": 5,
-      "norm_label": ".closeevent()"
+      "norm_label": ".closeevent()",
+      "id": "gui_main_window_mainwindow_closeevent"
     },
     {
-      "label": "Main application window.  Composition:  - Left dock: connection controls on",
+      "label": "Main application window.  Composition:  - Left dock: load-cell calibration /",
       "file_type": "rationale",
       "source_file": "src/gui/main_window.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_main_window_rationale_1",
       "community": 9,
-      "norm_label": "main application window.  composition:  - left dock: connection controls on"
+      "norm_label": "main application window.  composition:  - left dock: load-cell calibration /",
+      "id": "gui_main_window_rationale_1"
     },
     {
       "label": "Resize the window to fit the user's primary screen.          Picks the smaller",
       "file_type": "rationale",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L186",
+      "source_location": "L172",
       "_origin": "ast",
-      "id": "gui_main_window_rationale_186",
-      "community": 9,
-      "norm_label": "resize the window to fit the user's primary screen.          picks the smaller"
+      "community": 5,
+      "norm_label": "resize the window to fit the user's primary screen.          picks the smaller",
+      "id": "gui_main_window_rationale_172"
     },
     {
       "label": "Put a panel inside a titled group box for the stacked left dock.",
       "file_type": "rationale",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L211",
+      "source_location": "L197",
       "_origin": "ast",
-      "id": "gui_main_window_rationale_211",
-      "community": 9,
-      "norm_label": "put a panel inside a titled group box for the stacked left dock."
+      "community": 5,
+      "norm_label": "put a panel inside a titled group box for the stacked left dock.",
+      "id": "gui_main_window_rationale_197"
     },
     {
       "label": "plots.py",
@@ -929,9 +879,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_plots",
       "community": 1,
-      "norm_label": "plots.py"
+      "norm_label": "plots.py",
+      "id": "gui_plots"
     },
     {
       "label": "LiveCounter",
@@ -939,9 +889,19 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "gui_plots_livecounter",
       "community": 1,
-      "norm_label": "livecounter"
+      "norm_label": "livecounter",
+      "id": "gui_plots_livecounter"
+    },
+    {
+      "label": "QWidget",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "qwidget",
+      "id": "qwidget"
     },
     {
       "label": ".__init__()",
@@ -949,9 +909,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "gui_plots_livecounter_init",
       "community": 1,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_plots_livecounter_init"
     },
     {
       "label": ".add_value()",
@@ -959,9 +919,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L79",
       "_origin": "ast",
-      "id": "gui_plots_livecounter_add_value",
       "community": 1,
-      "norm_label": ".add_value()"
+      "norm_label": ".add_value()",
+      "id": "gui_plots_livecounter_add_value"
     },
     {
       "label": ".reset()",
@@ -969,9 +929,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L93",
       "_origin": "ast",
-      "id": "gui_plots_livecounter_reset",
       "community": 1,
-      "norm_label": ".reset()"
+      "norm_label": ".reset()",
+      "id": "gui_plots_livecounter_reset"
     },
     {
       "label": "ScrollingPlot",
@@ -979,9 +939,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L99",
       "_origin": "ast",
-      "id": "gui_plots_scrollingplot",
       "community": 1,
-      "norm_label": "scrollingplot"
+      "norm_label": "scrollingplot",
+      "id": "gui_plots_scrollingplot"
     },
     {
       "label": ".__init__()",
@@ -989,9 +949,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L107",
       "_origin": "ast",
-      "id": "gui_plots_scrollingplot_init",
       "community": 1,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_plots_scrollingplot_init"
     },
     {
       "label": ".add_point()",
@@ -999,9 +959,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L150",
       "_origin": "ast",
-      "id": "gui_plots_scrollingplot_add_point",
       "community": 1,
-      "norm_label": ".add_point()"
+      "norm_label": ".add_point()",
+      "id": "gui_plots_scrollingplot_add_point"
     },
     {
       "label": ".reset()",
@@ -1009,9 +969,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L160",
       "_origin": "ast",
-      "id": "gui_plots_scrollingplot_reset",
       "community": 1,
-      "norm_label": ".reset()"
+      "norm_label": ".reset()",
+      "id": "gui_plots_scrollingplot_reset"
     },
     {
       "label": "._maybe_redraw()",
@@ -1019,9 +979,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L166",
       "_origin": "ast",
-      "id": "gui_plots_scrollingplot_maybe_redraw",
       "community": 1,
-      "norm_label": "._maybe_redraw()"
+      "norm_label": "._maybe_redraw()",
+      "id": "gui_plots_scrollingplot_maybe_redraw"
     },
     {
       "label": "Reusable live-data widgets.  Two pieces are exported:  - :class:`LiveCounter",
@@ -1029,9 +989,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_plots_rationale_1",
       "community": 1,
-      "norm_label": "reusable live-data widgets.  two pieces are exported:  - :class:`livecounter"
+      "norm_label": "reusable live-data widgets.  two pieces are exported:  - :class:`livecounter",
+      "id": "gui_plots_rationale_1"
     },
     {
       "label": "Large numeric read-out for a single scalar signal.",
@@ -1039,9 +999,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "gui_plots_rationale_29",
       "community": 1,
-      "norm_label": "large numeric read-out for a single scalar signal."
+      "norm_label": "large numeric read-out for a single scalar signal.",
+      "id": "gui_plots_rationale_29"
     },
     {
       "label": "Scrolling time-series plot backed by a numpy ring buffer.      The plot only r",
@@ -1049,9 +1009,9 @@
       "source_file": "src/gui/plots.py",
       "source_location": "L100",
       "_origin": "ast",
-      "id": "gui_plots_rationale_100",
       "community": 1,
-      "norm_label": "scrolling time-series plot backed by a numpy ring buffer.      the plot only r"
+      "norm_label": "scrolling time-series plot backed by a numpy ring buffer.      the plot only r",
+      "id": "gui_plots_rationale_100"
     },
     {
       "label": "rpm_view.py",
@@ -1059,9 +1019,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_rpm_view",
       "community": 1,
-      "norm_label": "rpm_view.py"
+      "norm_label": "rpm_view.py",
+      "id": "gui_rpm_view"
     },
     {
       "label": "RpmView",
@@ -1069,9 +1029,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "gui_rpm_view_rpmview",
       "community": 1,
-      "norm_label": "rpmview"
+      "norm_label": "rpmview",
+      "id": "gui_rpm_view_rpmview"
     },
     {
       "label": ".__init__()",
@@ -1079,9 +1039,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "gui_rpm_view_rpmview_init",
       "community": 1,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_rpm_view_rpmview_init"
     },
     {
       "label": ".add_sample()",
@@ -1089,9 +1049,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "gui_rpm_view_rpmview_add_sample",
       "community": 1,
-      "norm_label": ".add_sample()"
+      "norm_label": ".add_sample()",
+      "id": "gui_rpm_view_rpmview_add_sample"
     },
     {
       "label": "VescTelemetry",
@@ -1099,9 +1059,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "src_gui_rpm_view_py_vesctelemetry",
       "community": 1,
-      "norm_label": "vesctelemetry"
+      "norm_label": "vesctelemetry",
+      "id": "src_gui_rpm_view_py_vesctelemetry"
     },
     {
       "label": ".reset()",
@@ -1109,9 +1069,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L46",
       "_origin": "ast",
-      "id": "gui_rpm_view_rpmview_reset",
       "community": 1,
-      "norm_label": ".reset()"
+      "norm_label": ".reset()",
+      "id": "gui_rpm_view_rpmview_reset"
     },
     {
       "label": "Live RPM view: composite of a big numeric counter + scrolling plot.  The widge",
@@ -1119,9 +1079,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_rpm_view_rationale_1",
       "community": 1,
-      "norm_label": "live rpm view: composite of a big numeric counter + scrolling plot.  the widge"
+      "norm_label": "live rpm view: composite of a big numeric counter + scrolling plot.  the widge",
+      "id": "gui_rpm_view_rationale_1"
     },
     {
       "label": "Big RPM counter on top, scrolling RPM-vs-time plot below.",
@@ -1129,9 +1089,9 @@
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "gui_rpm_view_rationale_19",
       "community": 1,
-      "norm_label": "big rpm counter on top, scrolling rpm-vs-time plot below."
+      "norm_label": "big rpm counter on top, scrolling rpm-vs-time plot below.",
+      "id": "gui_rpm_view_rationale_19"
     },
     {
       "label": "servo_panel.py",
@@ -1139,9 +1099,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_servo_panel",
-      "community": 3,
-      "norm_label": "servo_panel.py"
+      "community": 0,
+      "norm_label": "servo_panel.py",
+      "id": "gui_servo_panel"
     },
     {
       "label": "_Mode",
@@ -1149,9 +1109,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L55",
       "_origin": "ast",
-      "id": "gui_servo_panel_mode",
-      "community": 3,
-      "norm_label": "_mode"
+      "community": 0,
+      "norm_label": "_mode",
+      "id": "gui_servo_panel_mode"
     },
     {
       "label": "Enum",
@@ -1159,9 +1119,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "enum",
-      "community": 3,
-      "norm_label": "enum"
+      "community": 0,
+      "norm_label": "enum",
+      "id": "enum"
     },
     {
       "label": "ServoPanel",
@@ -1169,9 +1129,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel",
       "community": 2,
-      "norm_label": "servopanel"
+      "norm_label": "servopanel",
+      "id": "gui_servo_panel_servopanel"
     },
     {
       "label": ".__init__()",
@@ -1179,9 +1139,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L70",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_init",
       "community": 2,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_servo_panel_servopanel_init"
     },
     {
       "label": "AppConfig",
@@ -1189,9 +1149,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L70",
       "_origin": "ast",
-      "id": "src_gui_servo_panel_py_appconfig",
       "community": 2,
-      "norm_label": "appconfig"
+      "norm_label": "appconfig",
+      "id": "src_gui_servo_panel_py_appconfig"
     },
     {
       "label": "LoadCellSerial",
@@ -1199,9 +1159,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L70",
       "_origin": "ast",
-      "id": "src_gui_servo_panel_py_loadcellserial",
       "community": 2,
-      "norm_label": "loadcellserial"
+      "norm_label": "loadcellserial",
+      "id": "src_gui_servo_panel_py_loadcellserial"
     },
     {
       "label": "._refresh_calib_label()",
@@ -1209,9 +1169,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L196",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_refresh_calib_label",
       "community": 2,
-      "norm_label": "._refresh_calib_label()"
+      "norm_label": "._refresh_calib_label()",
+      "id": "gui_servo_panel_servopanel_refresh_calib_label"
     },
     {
       "label": "._refresh_visibility()",
@@ -1219,9 +1179,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L202",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_refresh_visibility",
       "community": 2,
-      "norm_label": "._refresh_visibility()"
+      "norm_label": "._refresh_visibility()",
+      "id": "gui_servo_panel_servopanel_refresh_visibility"
     },
     {
       "label": "._refresh_readout()",
@@ -1229,9 +1189,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L216",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_refresh_readout",
       "community": 2,
-      "norm_label": "._refresh_readout()"
+      "norm_label": "._refresh_readout()",
+      "id": "gui_servo_panel_servopanel_refresh_readout"
     },
     {
       "label": "._throttle_to_angle()",
@@ -1239,9 +1199,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L225",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_throttle_to_angle",
       "community": 2,
-      "norm_label": "._throttle_to_angle()"
+      "norm_label": "._throttle_to_angle()",
+      "id": "gui_servo_panel_servopanel_throttle_to_angle"
     },
     {
       "label": "._send_angle()",
@@ -1249,9 +1209,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L232",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_send_angle",
       "community": 2,
-      "norm_label": "._send_angle()"
+      "norm_label": "._send_angle()",
+      "id": "gui_servo_panel_servopanel_send_angle"
     },
     {
       "label": "._on_mode_toggled()",
@@ -1259,9 +1219,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L242",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_on_mode_toggled",
       "community": 2,
-      "norm_label": "._on_mode_toggled()"
+      "norm_label": "._on_mode_toggled()",
+      "id": "gui_servo_panel_servopanel_on_mode_toggled"
     },
     {
       "label": "._on_angle_changed()",
@@ -1269,9 +1229,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L271",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_on_angle_changed",
       "community": 2,
-      "norm_label": "._on_angle_changed()"
+      "norm_label": "._on_angle_changed()",
+      "id": "gui_servo_panel_servopanel_on_angle_changed"
     },
     {
       "label": "._on_throttle_changed()",
@@ -1279,9 +1239,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L275",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_on_throttle_changed",
       "community": 2,
-      "norm_label": "._on_throttle_changed()"
+      "norm_label": "._on_throttle_changed()",
+      "id": "gui_servo_panel_servopanel_on_throttle_changed"
     },
     {
       "label": "._send_throttle()",
@@ -1289,9 +1249,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L279",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_send_throttle",
       "community": 2,
-      "norm_label": "._send_throttle()"
+      "norm_label": "._send_throttle()",
+      "id": "gui_servo_panel_servopanel_send_throttle"
     },
     {
       "label": "._save_zero()",
@@ -1299,9 +1259,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L286",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_save_zero",
       "community": 2,
-      "norm_label": "._save_zero()"
+      "norm_label": "._save_zero()",
+      "id": "gui_servo_panel_servopanel_save_zero"
     },
     {
       "label": "._save_full()",
@@ -1309,9 +1269,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L293",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_save_full",
       "community": 2,
-      "norm_label": "._save_full()"
+      "norm_label": "._save_full()",
+      "id": "gui_servo_panel_servopanel_save_full"
     },
     {
       "label": ".zero_throttle()",
@@ -1319,9 +1279,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L300",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_zero_throttle",
       "community": 2,
-      "norm_label": ".zero_throttle()"
+      "norm_label": ".zero_throttle()",
+      "id": "gui_servo_panel_servopanel_zero_throttle"
     },
     {
       "label": "._on_servo_ack()",
@@ -1329,9 +1289,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L309",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_on_servo_ack",
       "community": 2,
-      "norm_label": "._on_servo_ack()"
+      "norm_label": "._on_servo_ack()",
+      "id": "gui_servo_panel_servopanel_on_servo_ack"
     },
     {
       "label": "._on_connection_changed()",
@@ -1339,9 +1299,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L321",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_on_connection_changed",
       "community": 2,
-      "norm_label": "._on_connection_changed()"
+      "norm_label": "._on_connection_changed()",
+      "id": "gui_servo_panel_servopanel_on_connection_changed"
     },
     {
       "label": ".keyPressEvent()",
@@ -1349,9 +1309,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L342",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_keypressevent",
       "community": 2,
-      "norm_label": ".keypressevent()"
+      "norm_label": ".keypressevent()",
+      "id": "gui_servo_panel_servopanel_keypressevent"
     },
     {
       "label": "QKeyEvent",
@@ -1359,9 +1319,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L342",
       "_origin": "ast",
-      "id": "qkeyevent",
       "community": 2,
-      "norm_label": "qkeyevent"
+      "norm_label": "qkeyevent",
+      "id": "qkeyevent"
     },
     {
       "label": ".keyReleaseEvent()",
@@ -1369,9 +1329,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L379",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_keyreleaseevent",
       "community": 2,
-      "norm_label": ".keyreleaseevent()"
+      "norm_label": ".keyreleaseevent()",
+      "id": "gui_servo_panel_servopanel_keyreleaseevent"
     },
     {
       "label": ".focusOutEvent()",
@@ -1379,9 +1339,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L399",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_focusoutevent",
       "community": 2,
-      "norm_label": ".focusoutevent()"
+      "norm_label": ".focusoutevent()",
+      "id": "gui_servo_panel_servopanel_focusoutevent"
     },
     {
       "label": "._handle_calibration_key()",
@@ -1389,9 +1349,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L410",
       "_origin": "ast",
-      "id": "gui_servo_panel_servopanel_handle_calibration_key",
       "community": 2,
-      "norm_label": "._handle_calibration_key()"
+      "norm_label": "._handle_calibration_key()",
+      "id": "gui_servo_panel_servopanel_handle_calibration_key"
     },
     {
       "label": "GUI panel for the throttle servo.  The panel runs in one of two mutually exclu",
@@ -1399,9 +1359,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_servo_panel_rationale_1",
-      "community": 3,
-      "norm_label": "gui panel for the throttle servo.  the panel runs in one of two mutually exclu"
+      "community": 0,
+      "norm_label": "gui panel for the throttle servo.  the panel runs in one of two mutually exclu",
+      "id": "gui_servo_panel_rationale_1"
     },
     {
       "label": "Calibration + manual / keyboard throttle control for the servo.",
@@ -1409,9 +1369,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L61",
       "_origin": "ast",
-      "id": "gui_servo_panel_rationale_61",
       "community": 2,
-      "norm_label": "calibration + manual / keyboard throttle control for the servo."
+      "norm_label": "calibration + manual / keyboard throttle control for the servo.",
+      "id": "gui_servo_panel_rationale_61"
     },
     {
       "label": "Linearly interpolate between the two calibrated angles.",
@@ -1419,9 +1379,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L226",
       "_origin": "ast",
-      "id": "gui_servo_panel_rationale_226",
       "community": 2,
-      "norm_label": "linearly interpolate between the two calibrated angles."
+      "norm_label": "linearly interpolate between the two calibrated angles.",
+      "id": "gui_servo_panel_rationale_226"
     },
     {
       "label": "Command 0 % throttle (used on Space, disconnect and shutdown).",
@@ -1429,9 +1389,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L301",
       "_origin": "ast",
-      "id": "gui_servo_panel_rationale_301",
       "community": 2,
-      "norm_label": "command 0 % throttle (used on space, disconnect and shutdown)."
+      "norm_label": "command 0 % throttle (used on space, disconnect and shutdown).",
+      "id": "gui_servo_panel_rationale_301"
     },
     {
       "label": "Original nudge-style arrow-key handling for calibration mode.",
@@ -1439,9 +1399,9 @@
       "source_file": "src/gui/servo_panel.py",
       "source_location": "L411",
       "_origin": "ast",
-      "id": "gui_servo_panel_rationale_411",
       "community": 2,
-      "norm_label": "original nudge-style arrow-key handling for calibration mode."
+      "norm_label": "original nudge-style arrow-key handling for calibration mode.",
+      "id": "gui_servo_panel_rationale_411"
     },
     {
       "label": "torque_view.py",
@@ -1449,9 +1409,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_torque_view",
       "community": 1,
-      "norm_label": "torque_view.py"
+      "norm_label": "torque_view.py",
+      "id": "gui_torque_view"
     },
     {
       "label": "TorqueView",
@@ -1459,9 +1419,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "gui_torque_view_torqueview",
       "community": 1,
-      "norm_label": "torqueview"
+      "norm_label": "torqueview",
+      "id": "gui_torque_view_torqueview"
     },
     {
       "label": ".__init__()",
@@ -1469,9 +1429,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "gui_torque_view_torqueview_init",
       "community": 1,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_torque_view_torqueview_init"
     },
     {
       "label": ".add_sample()",
@@ -1479,9 +1439,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "gui_torque_view_torqueview_add_sample",
       "community": 1,
-      "norm_label": ".add_sample()"
+      "norm_label": ".add_sample()",
+      "id": "gui_torque_view_torqueview_add_sample"
     },
     {
       "label": ".reset()",
@@ -1489,9 +1449,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L46",
       "_origin": "ast",
-      "id": "gui_torque_view_torqueview_reset",
       "community": 1,
-      "norm_label": ".reset()"
+      "norm_label": ".reset()",
+      "id": "gui_torque_view_torqueview_reset"
     },
     {
       "label": "Live torque view: big counter + scrolling plot.  Mirrors :class:`~src.gui.rpm_",
@@ -1499,9 +1459,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_torque_view_rationale_1",
       "community": 1,
-      "norm_label": "live torque view: big counter + scrolling plot.  mirrors :class:`~src.gui.rpm_"
+      "norm_label": "live torque view: big counter + scrolling plot.  mirrors :class:`~src.gui.rpm_",
+      "id": "gui_torque_view_rationale_1"
     },
     {
       "label": "Big torque counter on top, scrolling torque-vs-time plot below.",
@@ -1509,9 +1469,9 @@
       "source_file": "src/gui/torque_view.py",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "gui_torque_view_rationale_18",
       "community": 1,
-      "norm_label": "big torque counter on top, scrolling torque-vs-time plot below."
+      "norm_label": "big torque counter on top, scrolling torque-vs-time plot below.",
+      "id": "gui_torque_view_rationale_18"
     },
     {
       "label": "vesc_panel.py",
@@ -1519,9 +1479,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_vesc_panel",
       "community": 0,
-      "norm_label": "vesc_panel.py"
+      "norm_label": "vesc_panel.py",
+      "id": "gui_vesc_panel"
     },
     {
       "label": "_Readout",
@@ -1529,9 +1489,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L51",
       "_origin": "ast",
-      "id": "gui_vesc_panel_readout",
       "community": 7,
-      "norm_label": "_readout"
+      "norm_label": "_readout",
+      "id": "gui_vesc_panel_readout"
     },
     {
       "label": "QFrame",
@@ -1539,9 +1499,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "qframe",
       "community": 7,
-      "norm_label": "qframe"
+      "norm_label": "qframe",
+      "id": "qframe"
     },
     {
       "label": ".__init__()",
@@ -1549,9 +1509,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "gui_vesc_panel_readout_init",
       "community": 7,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_vesc_panel_readout_init"
     },
     {
       "label": ".set_value()",
@@ -1559,9 +1519,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L75",
       "_origin": "ast",
-      "id": "gui_vesc_panel_readout_set_value",
       "community": 7,
-      "norm_label": ".set_value()"
+      "norm_label": ".set_value()",
+      "id": "gui_vesc_panel_readout_set_value"
     },
     {
       "label": "VescPanel",
@@ -1569,9 +1529,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L79",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel",
       "community": 7,
-      "norm_label": "vescpanel"
+      "norm_label": "vescpanel",
+      "id": "gui_vesc_panel_vescpanel"
     },
     {
       "label": ".__init__()",
@@ -1579,9 +1539,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_init",
       "community": 7,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "gui_vesc_panel_vescpanel_init"
     },
     {
       "label": "AppConfig",
@@ -1589,9 +1549,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "src_gui_vesc_panel_py_appconfig",
       "community": 7,
-      "norm_label": "appconfig"
+      "norm_label": "appconfig",
+      "id": "src_gui_vesc_panel_py_appconfig"
     },
     {
       "label": "VescController",
@@ -1599,9 +1559,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "vesccontroller",
       "community": 7,
-      "norm_label": "vesccontroller"
+      "norm_label": "vesccontroller",
+      "id": "vesccontroller"
     },
     {
       "label": "._on_telemetry()",
@@ -1609,9 +1569,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L207",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_on_telemetry",
       "community": 7,
-      "norm_label": "._on_telemetry()"
+      "norm_label": "._on_telemetry()",
+      "id": "gui_vesc_panel_vescpanel_on_telemetry"
     },
     {
       "label": "VescTelemetry",
@@ -1619,9 +1579,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L207",
       "_origin": "ast",
-      "id": "src_gui_vesc_panel_py_vesctelemetry",
       "community": 7,
-      "norm_label": "vesctelemetry"
+      "norm_label": "vesctelemetry",
+      "id": "src_gui_vesc_panel_py_vesctelemetry"
     },
     {
       "label": "._on_connection_changed()",
@@ -1629,9 +1589,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L217",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_on_connection_changed",
       "community": 7,
-      "norm_label": "._on_connection_changed()"
+      "norm_label": "._on_connection_changed()",
+      "id": "gui_vesc_panel_vescpanel_on_connection_changed"
     },
     {
       "label": "._on_mode_changed()",
@@ -1639,9 +1599,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L220",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_on_mode_changed",
       "community": 7,
-      "norm_label": "._on_mode_changed()"
+      "norm_label": "._on_mode_changed()",
+      "id": "gui_vesc_panel_vescpanel_on_mode_changed"
     },
     {
       "label": "._on_apply()",
@@ -1649,9 +1609,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L247",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_on_apply",
       "community": 7,
-      "norm_label": "._on_apply()"
+      "norm_label": "._on_apply()",
+      "id": "gui_vesc_panel_vescpanel_on_apply"
     },
     {
       "label": "._full_brake()",
@@ -1659,9 +1619,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L268",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_full_brake",
       "community": 7,
-      "norm_label": "._full_brake()"
+      "norm_label": "._full_brake()",
+      "id": "gui_vesc_panel_vescpanel_full_brake"
     },
     {
       "label": "._release()",
@@ -1669,9 +1629,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L272",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_release",
       "community": 7,
-      "norm_label": "._release()"
+      "norm_label": "._release()",
+      "id": "gui_vesc_panel_vescpanel_release"
     },
     {
       "label": "._on_limits_changed()",
@@ -1679,9 +1639,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L276",
       "_origin": "ast",
-      "id": "gui_vesc_panel_vescpanel_on_limits_changed",
       "community": 7,
-      "norm_label": "._on_limits_changed()"
+      "norm_label": "._on_limits_changed()",
+      "id": "gui_vesc_panel_vescpanel_on_limits_changed"
     },
     {
       "label": "GUI panel for driving the VESC.  Layout:  - A grid of telemetry read-outs (v",
@@ -1689,9 +1649,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "gui_vesc_panel_rationale_1",
       "community": 0,
-      "norm_label": "gui panel for driving the vesc.  layout:  - a grid of telemetry read-outs (v"
+      "norm_label": "gui panel for driving the vesc.  layout:  - a grid of telemetry read-outs (v",
+      "id": "gui_vesc_panel_rationale_1"
     },
     {
       "label": "One bordered cell: label + big value.",
@@ -1699,9 +1659,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L52",
       "_origin": "ast",
-      "id": "gui_vesc_panel_rationale_52",
       "community": 7,
-      "norm_label": "one bordered cell: label + big value."
+      "norm_label": "one bordered cell: label + big value.",
+      "id": "gui_vesc_panel_rationale_52"
     },
     {
       "label": "Telemetry display and on-screen setpoint controls.",
@@ -1709,9 +1669,9 @@
       "source_file": "src/gui/vesc_panel.py",
       "source_location": "L80",
       "_origin": "ast",
-      "id": "gui_vesc_panel_rationale_80",
       "community": 7,
-      "norm_label": "telemetry display and on-screen setpoint controls."
+      "norm_label": "telemetry display and on-screen setpoint controls.",
+      "id": "gui_vesc_panel_rationale_80"
     },
     {
       "label": "__init__.py",
@@ -1719,9 +1679,9 @@
       "source_file": "src/hardware/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hardware_init",
       "community": 12,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "hardware_init"
     },
     {
       "label": "Hardware interface layer: Arduino HX711 link and VESC controller.",
@@ -1729,9 +1689,9 @@
       "source_file": "src/hardware/__init__.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hardware_init_rationale_1",
       "community": 12,
-      "norm_label": "hardware interface layer: arduino hx711 link and vesc controller."
+      "norm_label": "hardware interface layer: arduino hx711 link and vesc controller.",
+      "id": "hardware_init_rationale_1"
     },
     {
       "label": "loadcell_serial.py",
@@ -1739,9 +1699,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial",
       "community": 3,
-      "norm_label": "loadcell_serial.py"
+      "norm_label": "loadcell_serial.py",
+      "id": "hardware_loadcell_serial"
     },
     {
       "label": "LoadCellSample",
@@ -1749,9 +1709,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellsample",
       "community": 3,
-      "norm_label": "loadcellsample"
+      "norm_label": "loadcellsample",
+      "id": "hardware_loadcell_serial_loadcellsample"
     },
     {
       "label": "LoadCellSerial",
@@ -1759,9 +1719,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial",
       "community": 6,
-      "norm_label": "loadcellserial"
+      "norm_label": "loadcellserial",
+      "id": "hardware_loadcell_serial_loadcellserial"
     },
     {
       "label": ".__init__()",
@@ -1769,9 +1729,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L65",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_init",
       "community": 6,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "hardware_loadcell_serial_loadcellserial_init"
     },
     {
       "label": "LoadCellCalibration",
@@ -1779,9 +1739,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L65",
       "_origin": "ast",
-      "id": "src_hardware_loadcell_serial_py_loadcellcalibration",
       "community": 6,
-      "norm_label": "loadcellcalibration"
+      "norm_label": "loadcellcalibration",
+      "id": "src_hardware_loadcell_serial_py_loadcellcalibration"
     },
     {
       "label": ".is_open()",
@@ -1789,9 +1749,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L92",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_is_open",
       "community": 6,
-      "norm_label": ".is_open()"
+      "norm_label": ".is_open()",
+      "id": "hardware_loadcell_serial_loadcellserial_is_open"
     },
     {
       "label": ".set_calibration()",
@@ -1799,9 +1759,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L95",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_set_calibration",
       "community": 6,
-      "norm_label": ".set_calibration()"
+      "norm_label": ".set_calibration()",
+      "id": "hardware_loadcell_serial_loadcellserial_set_calibration"
     },
     {
       "label": ".latest_raw()",
@@ -1809,9 +1769,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L105",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_latest_raw",
       "community": 6,
-      "norm_label": ".latest_raw()"
+      "norm_label": ".latest_raw()",
+      "id": "hardware_loadcell_serial_loadcellserial_latest_raw"
     },
     {
       "label": ".set_servo_angle()",
@@ -1819,9 +1779,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L109",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_set_servo_angle",
       "community": 6,
-      "norm_label": ".set_servo_angle()"
+      "norm_label": ".set_servo_angle()",
+      "id": "hardware_loadcell_serial_loadcellserial_set_servo_angle"
     },
     {
       "label": ".open()",
@@ -1829,9 +1789,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L132",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_open",
       "community": 6,
-      "norm_label": ".open()"
+      "norm_label": ".open()",
+      "id": "hardware_loadcell_serial_loadcellserial_open"
     },
     {
       "label": ".close()",
@@ -1839,9 +1799,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L156",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_close",
       "community": 6,
-      "norm_label": ".close()"
+      "norm_label": ".close()",
+      "id": "hardware_loadcell_serial_loadcellserial_close"
     },
     {
       "label": "._read_loop()",
@@ -1849,9 +1809,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L174",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_read_loop",
       "community": 6,
-      "norm_label": "._read_loop()"
+      "norm_label": "._read_loop()",
+      "id": "hardware_loadcell_serial_loadcellserial_read_loop"
     },
     {
       "label": "._emit_sample()",
@@ -1859,9 +1819,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L213",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_emit_sample",
       "community": 6,
-      "norm_label": "._emit_sample()"
+      "norm_label": "._emit_sample()",
+      "id": "hardware_loadcell_serial_loadcellserial_emit_sample"
     },
     {
       "label": "._parse_lc()",
@@ -1869,9 +1829,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L230",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_parse_lc",
       "community": 6,
-      "norm_label": "._parse_lc()"
+      "norm_label": "._parse_lc()",
+      "id": "hardware_loadcell_serial_loadcellserial_parse_lc"
     },
     {
       "label": "._parse_sv()",
@@ -1879,9 +1839,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L241",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_loadcellserial_parse_sv",
       "community": 6,
-      "norm_label": "._parse_sv()"
+      "norm_label": "._parse_sv()",
+      "id": "hardware_loadcell_serial_loadcellserial_parse_sv"
     },
     {
       "label": "_apply_cal()",
@@ -1889,9 +1849,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L252",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_apply_cal",
       "community": 6,
-      "norm_label": "_apply_cal()"
+      "norm_label": "_apply_cal()",
+      "id": "hardware_loadcell_serial_apply_cal"
     },
     {
       "label": "Serial interface to the dual-HX711 + throttle-servo Arduino sketch.  The Ardui",
@@ -1899,9 +1859,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_rationale_1",
       "community": 3,
-      "norm_label": "serial interface to the dual-hx711 + throttle-servo arduino sketch.  the ardui"
+      "norm_label": "serial interface to the dual-hx711 + throttle-servo arduino sketch.  the ardui",
+      "id": "hardware_loadcell_serial_rationale_1"
     },
     {
       "label": "A single synchronised reading from both load cells.",
@@ -1909,9 +1869,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_rationale_34",
       "community": 3,
-      "norm_label": "a single synchronised reading from both load cells."
+      "norm_label": "a single synchronised reading from both load cells.",
+      "id": "hardware_loadcell_serial_rationale_34"
     },
     {
       "label": "Background reader for the dual-HX711 Arduino.      Signals     -------     s",
@@ -1919,9 +1879,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_rationale_44",
       "community": 6,
-      "norm_label": "background reader for the dual-hx711 arduino.      signals     -------     s"
+      "norm_label": "background reader for the dual-hx711 arduino.      signals     -------     s",
+      "id": "hardware_loadcell_serial_rationale_44"
     },
     {
       "label": "Replace the in-memory calibration objects atomically.",
@@ -1929,9 +1889,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L100",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_rationale_100",
       "community": 6,
-      "norm_label": "replace the in-memory calibration objects atomically."
+      "norm_label": "replace the in-memory calibration objects atomically.",
+      "id": "hardware_loadcell_serial_rationale_100"
     },
     {
       "label": "Send a throttle-servo angle command to the Arduino.          The angle is clam",
@@ -1939,9 +1899,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L110",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_rationale_110",
       "community": 6,
-      "norm_label": "send a throttle-servo angle command to the arduino.          the angle is clam"
+      "norm_label": "send a throttle-servo angle command to the arduino.          the angle is clam",
+      "id": "hardware_loadcell_serial_rationale_110"
     },
     {
       "label": "Convert a raw HX711 count to Newtons using a tare + slope model.",
@@ -1949,9 +1909,9 @@
       "source_file": "src/hardware/loadcell_serial.py",
       "source_location": "L253",
       "_origin": "ast",
-      "id": "hardware_loadcell_serial_rationale_253",
       "community": 6,
-      "norm_label": "convert a raw hx711 count to newtons using a tare + slope model."
+      "norm_label": "convert a raw hx711 count to newtons using a tare + slope model.",
+      "id": "hardware_loadcell_serial_rationale_253"
     },
     {
       "label": "vesc_controller.py",
@@ -1959,9 +1919,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hardware_vesc_controller",
       "community": 0,
-      "norm_label": "vesc_controller.py"
+      "norm_label": "vesc_controller.py",
+      "id": "hardware_vesc_controller"
     },
     {
       "label": "SetHandbrake",
@@ -1969,9 +1929,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_sethandbrake",
       "community": 0,
-      "norm_label": "sethandbrake"
+      "norm_label": "sethandbrake",
+      "id": "hardware_vesc_controller_sethandbrake"
     },
     {
       "label": "ControlMode",
@@ -1979,9 +1939,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_controlmode",
       "community": 0,
-      "norm_label": "controlmode"
+      "norm_label": "controlmode",
+      "id": "hardware_vesc_controller_controlmode"
     },
     {
       "label": "VescTelemetry",
@@ -1989,9 +1949,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L70",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesctelemetry",
-      "community": 8,
-      "norm_label": "vesctelemetry"
+      "community": 0,
+      "norm_label": "vesctelemetry",
+      "id": "hardware_vesc_controller_vesctelemetry"
     },
     {
       "label": ".from_pyvesc()",
@@ -1999,9 +1959,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L86",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesctelemetry_from_pyvesc",
-      "community": 8,
-      "norm_label": ".from_pyvesc()"
+      "community": 0,
+      "norm_label": ".from_pyvesc()",
+      "id": "hardware_vesc_controller_vesctelemetry_from_pyvesc"
     },
     {
       "label": "Any",
@@ -2009,9 +1969,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L86",
       "_origin": "ast",
-      "id": "any",
-      "community": 8,
-      "norm_label": "any"
+      "community": 0,
+      "norm_label": "any",
+      "id": "any"
     },
     {
       "label": "VescController",
@@ -2019,9 +1979,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L111",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller",
       "community": 0,
-      "norm_label": "vesccontroller"
+      "norm_label": "vesccontroller",
+      "id": "hardware_vesc_controller_vesccontroller"
     },
     {
       "label": ".__init__()",
@@ -2029,9 +1989,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L130",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_init",
-      "community": 6,
-      "norm_label": ".__init__()"
+      "community": 8,
+      "norm_label": ".__init__()",
+      "id": "hardware_vesc_controller_vesccontroller_init"
     },
     {
       "label": ".is_open()",
@@ -2039,9 +1999,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L157",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_is_open",
       "community": 0,
-      "norm_label": ".is_open()"
+      "norm_label": ".is_open()",
+      "id": "hardware_vesc_controller_vesccontroller_is_open"
     },
     {
       "label": ".open()",
@@ -2049,9 +2009,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L160",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_open",
       "community": 0,
-      "norm_label": ".open()"
+      "norm_label": ".open()",
+      "id": "hardware_vesc_controller_vesccontroller_open"
     },
     {
       "label": ".close()",
@@ -2059,9 +2019,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L191",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_close",
       "community": 0,
-      "norm_label": ".close()"
+      "norm_label": ".close()",
+      "id": "hardware_vesc_controller_vesccontroller_close"
     },
     {
       "label": ".mode()",
@@ -2069,9 +2029,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L216",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_mode",
       "community": 0,
-      "norm_label": ".mode()"
+      "norm_label": ".mode()",
+      "id": "hardware_vesc_controller_vesccontroller_mode"
     },
     {
       "label": ".setpoint()",
@@ -2079,9 +2039,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L221",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_setpoint",
       "community": 0,
-      "norm_label": ".setpoint()"
+      "norm_label": ".setpoint()",
+      "id": "hardware_vesc_controller_vesccontroller_setpoint"
     },
     {
       "label": "._set_command()",
@@ -2089,9 +2049,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L225",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_command",
       "community": 0,
-      "norm_label": "._set_command()"
+      "norm_label": "._set_command()",
+      "id": "hardware_vesc_controller_vesccontroller_set_command"
     },
     {
       "label": ".set_rpm()",
@@ -2099,9 +2059,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L255",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_rpm",
       "community": 0,
-      "norm_label": ".set_rpm()"
+      "norm_label": ".set_rpm()",
+      "id": "hardware_vesc_controller_vesccontroller_set_rpm"
     },
     {
       "label": ".set_current()",
@@ -2109,9 +2069,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L258",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_current",
       "community": 0,
-      "norm_label": ".set_current()"
+      "norm_label": ".set_current()",
+      "id": "hardware_vesc_controller_vesccontroller_set_current"
     },
     {
       "label": ".set_brake_current()",
@@ -2119,9 +2079,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L263",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_brake_current",
       "community": 0,
-      "norm_label": ".set_brake_current()"
+      "norm_label": ".set_brake_current()",
+      "id": "hardware_vesc_controller_vesccontroller_set_brake_current"
     },
     {
       "label": ".set_handbrake_current()",
@@ -2129,9 +2089,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L271",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_handbrake_current",
       "community": 0,
-      "norm_label": ".set_handbrake_current()"
+      "norm_label": ".set_handbrake_current()",
+      "id": "hardware_vesc_controller_vesccontroller_set_handbrake_current"
     },
     {
       "label": ".set_duty_cycle()",
@@ -2139,9 +2099,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L277",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_duty_cycle",
       "community": 0,
-      "norm_label": ".set_duty_cycle()"
+      "norm_label": ".set_duty_cycle()",
+      "id": "hardware_vesc_controller_vesccontroller_set_duty_cycle"
     },
     {
       "label": ".set_position()",
@@ -2149,9 +2109,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L283",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_position",
       "community": 0,
-      "norm_label": ".set_position()"
+      "norm_label": ".set_position()",
+      "id": "hardware_vesc_controller_vesccontroller_set_position"
     },
     {
       "label": ".full_brake()",
@@ -2159,9 +2119,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L294",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_full_brake",
       "community": 0,
-      "norm_label": ".full_brake()"
+      "norm_label": ".full_brake()",
+      "id": "hardware_vesc_controller_vesccontroller_full_brake"
     },
     {
       "label": ".release()",
@@ -2169,9 +2129,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L298",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_release",
       "community": 0,
-      "norm_label": ".release()"
+      "norm_label": ".release()",
+      "id": "hardware_vesc_controller_vesccontroller_release"
     },
     {
       "label": ".set_max_brake_current()",
@@ -2179,9 +2139,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L310",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_set_max_brake_current",
       "community": 0,
-      "norm_label": ".set_max_brake_current()"
+      "norm_label": ".set_max_brake_current()",
+      "id": "hardware_vesc_controller_vesccontroller_set_max_brake_current"
     },
     {
       "label": "._io_loop()",
@@ -2189,9 +2149,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L315",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_io_loop",
       "community": 0,
-      "norm_label": "._io_loop()"
+      "norm_label": "._io_loop()",
+      "id": "hardware_vesc_controller_vesccontroller_io_loop"
     },
     {
       "label": "._tick_once()",
@@ -2199,9 +2159,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L352",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_vesccontroller_tick_once",
       "community": 0,
-      "norm_label": "._tick_once()"
+      "norm_label": "._tick_once()",
+      "id": "hardware_vesc_controller_vesccontroller_tick_once"
     },
     {
       "label": "Serial",
@@ -2209,9 +2169,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L352",
       "_origin": "ast",
-      "id": "serial",
       "community": 0,
-      "norm_label": "serial"
+      "norm_label": "serial",
+      "id": "serial"
     },
     {
       "label": "Background controller for a VESC-based motor controller.  This module wraps th",
@@ -2219,9 +2179,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_1",
       "community": 0,
-      "norm_label": "background controller for a vesc-based motor controller.  this module wraps th"
+      "norm_label": "background controller for a vesc-based motor controller.  this module wraps th",
+      "id": "hardware_vesc_controller_rationale_1"
     },
     {
       "label": "One snapshot of VESC measurements.",
@@ -2229,9 +2189,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L71",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_71",
-      "community": 8,
-      "norm_label": "one snapshot of vesc measurements."
+      "community": 0,
+      "norm_label": "one snapshot of vesc measurements.",
+      "id": "hardware_vesc_controller_rationale_71"
     },
     {
       "label": "Build a snapshot from whatever fields the running firmware exposes.          O",
@@ -2239,9 +2199,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L87",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_87",
-      "community": 8,
-      "norm_label": "build a snapshot from whatever fields the running firmware exposes.          o"
+      "community": 0,
+      "norm_label": "build a snapshot from whatever fields the running firmware exposes.          o",
+      "id": "hardware_vesc_controller_rationale_87"
     },
     {
       "label": "Thread-safe asynchronous wrapper around a VESC over UART/USB-CDC.      Signals",
@@ -2249,9 +2209,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L112",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_112",
       "community": 0,
-      "norm_label": "thread-safe asynchronous wrapper around a vesc over uart/usb-cdc.      signals"
+      "norm_label": "thread-safe asynchronous wrapper around a vesc over uart/usb-cdc.      signals",
+      "id": "hardware_vesc_controller_rationale_112"
     },
     {
       "label": "Atomically update the active setpoint.          Parameters         ----------",
@@ -2259,9 +2219,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L232",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_232",
       "community": 0,
-      "norm_label": "atomically update the active setpoint.          parameters         ----------"
+      "norm_label": "atomically update the active setpoint.          parameters         ----------",
+      "id": "hardware_vesc_controller_rationale_232"
     },
     {
       "label": "Apply maximum brake current (effectively a hard stop).",
@@ -2269,9 +2229,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L295",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_295",
       "community": 0,
-      "norm_label": "apply maximum brake current (effectively a hard stop)."
+      "norm_label": "apply maximum brake current (effectively a hard stop).",
+      "id": "hardware_vesc_controller_rationale_295"
     },
     {
       "label": "Stop driving the motor \u2014 it will coast.",
@@ -2279,9 +2239,9 @@
       "source_file": "src/hardware/vesc_controller.py",
       "source_location": "L299",
       "_origin": "ast",
-      "id": "hardware_vesc_controller_rationale_299",
       "community": 0,
-      "norm_label": "stop driving the motor \u2014 it will coast."
+      "norm_label": "stop driving the motor \u2014 it will coast.",
+      "id": "hardware_vesc_controller_rationale_299"
     },
     {
       "label": "main.py",
@@ -2289,9 +2249,9 @@
       "source_file": "src/main.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_main",
-      "community": 5,
-      "norm_label": "main.py"
+      "community": 10,
+      "norm_label": "main.py",
+      "id": "src_main"
     },
     {
       "label": "_configure_logging()",
@@ -2299,9 +2259,9 @@
       "source_file": "src/main.py",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "src_main_configure_logging",
-      "community": 5,
-      "norm_label": "_configure_logging()"
+      "community": 10,
+      "norm_label": "_configure_logging()",
+      "id": "src_main_configure_logging"
     },
     {
       "label": "main()",
@@ -2309,9 +2269,9 @@
       "source_file": "src/main.py",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "src_main_main",
-      "community": 5,
-      "norm_label": "main()"
+      "community": 10,
+      "norm_label": "main()",
+      "id": "src_main_main"
     },
     {
       "label": "Application entry point.  Run as::      python -m src.main",
@@ -2319,9 +2279,9 @@
       "source_file": "src/main.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_main_rationale_1",
-      "community": 5,
-      "norm_label": "application entry point.  run as::      python -m src.main"
+      "community": 10,
+      "norm_label": "application entry point.  run as::      python -m src.main",
+      "id": "src_main_rationale_1"
     },
     {
       "label": "view_recordings.py",
@@ -2329,9 +2289,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "view_recordings",
       "community": 4,
-      "norm_label": "view_recordings.py"
+      "norm_label": "view_recordings.py",
+      "id": "view_recordings"
     },
     {
       "label": "load_csv()",
@@ -2339,9 +2299,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "view_recordings_load_csv",
       "community": 4,
-      "norm_label": "load_csv()"
+      "norm_label": "load_csv()",
+      "id": "view_recordings_load_csv"
     },
     {
       "label": "Path",
@@ -2349,9 +2309,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "view_recordings_py_path",
       "community": 4,
-      "norm_label": "path"
+      "norm_label": "path",
+      "id": "view_recordings_py_path"
     },
     {
       "label": "ndarray",
@@ -2359,9 +2319,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "ndarray",
       "community": 4,
-      "norm_label": "ndarray"
+      "norm_label": "ndarray",
+      "id": "ndarray"
     },
     {
       "label": "_mask_finite()",
@@ -2369,9 +2329,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L128",
       "_origin": "ast",
-      "id": "view_recordings_mask_finite",
       "community": 4,
-      "norm_label": "_mask_finite()"
+      "norm_label": "_mask_finite()",
+      "id": "view_recordings_mask_finite"
     },
     {
       "label": "ViewerWindow",
@@ -2379,9 +2339,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L138",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow",
       "community": 4,
-      "norm_label": "viewerwindow"
+      "norm_label": "viewerwindow",
+      "id": "view_recordings_viewerwindow"
     },
     {
       "label": ".__init__()",
@@ -2389,9 +2349,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L141",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_init",
       "community": 4,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "view_recordings_viewerwindow_init"
     },
     {
       "label": "._size_to_screen()",
@@ -2399,9 +2359,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L237",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_size_to_screen",
       "community": 4,
-      "norm_label": "._size_to_screen()"
+      "norm_label": "._size_to_screen()",
+      "id": "view_recordings_viewerwindow_size_to_screen"
     },
     {
       "label": "._update_folder_label()",
@@ -2409,9 +2369,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L253",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_update_folder_label",
       "community": 4,
-      "norm_label": "._update_folder_label()"
+      "norm_label": "._update_folder_label()",
+      "id": "view_recordings_viewerwindow_update_folder_label"
     },
     {
       "label": "._refresh_files()",
@@ -2419,9 +2379,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L256",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_refresh_files",
       "community": 4,
-      "norm_label": "._refresh_files()"
+      "norm_label": "._refresh_files()",
+      "id": "view_recordings_viewerwindow_refresh_files"
     },
     {
       "label": "._browse_folder()",
@@ -2429,9 +2389,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L283",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_browse_folder",
       "community": 4,
-      "norm_label": "._browse_folder()"
+      "norm_label": "._browse_folder()",
+      "id": "view_recordings_viewerwindow_browse_folder"
     },
     {
       "label": "._on_file_selected()",
@@ -2439,9 +2399,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L293",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_on_file_selected",
       "community": 4,
-      "norm_label": "._on_file_selected()"
+      "norm_label": "._on_file_selected()",
+      "id": "view_recordings_viewerwindow_on_file_selected"
     },
     {
       "label": "._on_layout_changed()",
@@ -2449,9 +2409,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L312",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_on_layout_changed",
       "community": 4,
-      "norm_label": "._on_layout_changed()"
+      "norm_label": "._on_layout_changed()",
+      "id": "view_recordings_viewerwindow_on_layout_changed"
     },
     {
       "label": "._rebuild_plots()",
@@ -2459,9 +2419,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L318",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_rebuild_plots",
       "community": 4,
-      "norm_label": "._rebuild_plots()"
+      "norm_label": "._rebuild_plots()",
+      "id": "view_recordings_viewerwindow_rebuild_plots"
     },
     {
       "label": "._build_stacked()",
@@ -2469,9 +2429,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L369",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_build_stacked",
       "community": 4,
-      "norm_label": "._build_stacked()"
+      "norm_label": "._build_stacked()",
+      "id": "view_recordings_viewerwindow_build_stacked"
     },
     {
       "label": "._build_overlay()",
@@ -2479,9 +2439,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L406",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_build_overlay",
       "community": 4,
-      "norm_label": "._build_overlay()"
+      "norm_label": "._build_overlay()",
+      "id": "view_recordings_viewerwindow_build_overlay"
     },
     {
       "label": "._install_crosshair()",
@@ -2489,9 +2449,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L503",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_install_crosshair",
       "community": 4,
-      "norm_label": "._install_crosshair()"
+      "norm_label": "._install_crosshair()",
+      "id": "view_recordings_viewerwindow_install_crosshair"
     },
     {
       "label": "._on_mouse_moved()",
@@ -2499,9 +2459,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L530",
       "_origin": "ast",
-      "id": "view_recordings_viewerwindow_on_mouse_moved",
       "community": 4,
-      "norm_label": "._on_mouse_moved()"
+      "norm_label": "._on_mouse_moved()",
+      "id": "view_recordings_viewerwindow_on_mouse_moved"
     },
     {
       "label": "_parse_args()",
@@ -2509,9 +2469,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L584",
       "_origin": "ast",
-      "id": "view_recordings_parse_args",
       "community": 4,
-      "norm_label": "_parse_args()"
+      "norm_label": "_parse_args()",
+      "id": "view_recordings_parse_args"
     },
     {
       "label": "Namespace",
@@ -2519,9 +2479,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L584",
       "_origin": "ast",
-      "id": "namespace",
       "community": 4,
-      "norm_label": "namespace"
+      "norm_label": "namespace",
+      "id": "namespace"
     },
     {
       "label": "main()",
@@ -2529,9 +2489,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L600",
       "_origin": "ast",
-      "id": "view_recordings_main",
       "community": 4,
-      "norm_label": "main()"
+      "norm_label": "main()",
+      "id": "view_recordings_main"
     },
     {
       "label": "Interactive viewer for dyno CSV recordings.  The companion to :mod:`src.data_r",
@@ -2539,9 +2499,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "view_recordings_rationale_1",
       "community": 4,
-      "norm_label": "interactive viewer for dyno csv recordings.  the companion to :mod:`src.data_r"
+      "norm_label": "interactive viewer for dyno csv recordings.  the companion to :mod:`src.data_r",
+      "id": "view_recordings_rationale_1"
     },
     {
       "label": "Parse a dyno recording CSV.      Returns a dict with keys ``t`` and one entry",
@@ -2549,9 +2509,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L75",
       "_origin": "ast",
-      "id": "view_recordings_rationale_75",
       "community": 4,
-      "norm_label": "parse a dyno recording csv.      returns a dict with keys ``t`` and one entry"
+      "norm_label": "parse a dyno recording csv.      returns a dict with keys ``t`` and one entry",
+      "id": "view_recordings_rationale_75"
     },
     {
       "label": "Return (t, y) keeping only points where ``y`` is finite (non-NaN).",
@@ -2559,9 +2519,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L129",
       "_origin": "ast",
-      "id": "view_recordings_rationale_129",
       "community": 4,
-      "norm_label": "return (t, y) keeping only points where ``y`` is finite (non-nan)."
+      "norm_label": "return (t, y) keeping only points where ``y`` is finite (non-nan).",
+      "id": "view_recordings_rationale_129"
     },
     {
       "label": "Top-level viewer window: toolbar + plot canvas + read-out strip.",
@@ -2569,9 +2529,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L139",
       "_origin": "ast",
-      "id": "view_recordings_rationale_139",
       "community": 4,
-      "norm_label": "top-level viewer window: toolbar + plot canvas + read-out strip."
+      "norm_label": "top-level viewer window: toolbar + plot canvas + read-out strip.",
+      "id": "view_recordings_rationale_139"
     },
     {
       "label": "Tear down any previous plot graph and build the active mode.",
@@ -2579,9 +2539,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L319",
       "_origin": "ast",
-      "id": "view_recordings_rationale_319",
       "community": 4,
-      "norm_label": "tear down any previous plot graph and build the active mode."
+      "norm_label": "tear down any previous plot graph and build the active mode.",
+      "id": "view_recordings_rationale_319"
     },
     {
       "label": "Single plot, three independent Y axes (one per channel).          The first ch",
@@ -2589,9 +2549,9 @@
       "source_file": "view_recordings.py",
       "source_location": "L407",
       "_origin": "ast",
-      "id": "view_recordings_rationale_407",
       "community": 4,
-      "norm_label": "single plot, three independent y axes (one per channel).          the first ch"
+      "norm_label": "single plot, three independent y axes (one per channel).          the first ch",
+      "id": "view_recordings_rationale_407"
     },
     {
       "label": "Update the crosshair position and the value read-out strip.",
@@ -2599,79 +2559,22 @@
       "source_file": "view_recordings.py",
       "source_location": "L531",
       "_origin": "ast",
-      "id": "view_recordings_rationale_531",
       "community": 4,
-      "norm_label": "update the crosshair position and the value read-out strip."
+      "norm_label": "update the crosshair position and the value read-out strip.",
+      "id": "view_recordings_rationale_531"
     },
     {
-      "label": "README.md",
+      "label": "Motor Dyno README",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme",
-      "community": 10,
-      "norm_label": "readme.md"
-    },
-    {
-      "label": "Motor Dyno Control & Telemetry GUI",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme_motor_dyno_control_telemetry_gui",
-      "community": 10,
-      "norm_label": "motor dyno control & telemetry gui"
-    },
-    {
-      "label": "Project layout",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "readme_project_layout",
-      "community": 10,
-      "norm_label": "project layout"
-    },
-    {
-      "label": "Quick start",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L69",
-      "_origin": "ast",
-      "id": "readme_quick_start",
-      "community": 10,
-      "norm_label": "quick start"
-    },
-    {
-      "label": "Viewing recordings",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L132",
-      "_origin": "ast",
-      "id": "readme_viewing_recordings",
-      "community": 10,
-      "norm_label": "viewing recordings"
-    },
-    {
-      "label": "Safety",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L169",
-      "_origin": "ast",
-      "id": "readme_safety",
-      "community": 10,
-      "norm_label": "safety"
-    },
-    {
-      "label": "Notes on libraries",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L186",
-      "_origin": "ast",
-      "id": "readme_notes_on_libraries",
-      "community": 10,
-      "norm_label": "notes on libraries"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 6,
+      "norm_label": "motor dyno readme",
+      "id": "readme"
     },
     {
       "label": "Python Requirements",
@@ -3527,236 +3430,155 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L28",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L20",
       "weight": 1.0,
-      "source": "gui_connection_panel",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog",
+      "target": "gui_connection_dialog_connectionchoice"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L35",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L27",
       "weight": 1.0,
-      "source": "gui_connection_panel",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog",
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
+      "source_file": "src/gui/connection_dialog.py",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "gui_connection_panel_rationale_1",
-      "target": "gui_connection_panel",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_rationale_1",
+      "target": "gui_connection_dialog"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "gui_main_window",
-      "target": "gui_connection_panel",
-      "confidence_score": 1.0
+      "target": "gui_connection_dialog"
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 0.5
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "gui_connection_dialog_connectionchoice"
     },
     {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L127",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L102",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_choice",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "gui_main_window",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 0.8,
-      "source": "gui_main_window_mainwindow",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 0.8,
-      "source": "src_gui_main_window_py_appconfig",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 0.8,
-      "source": "src_gui_main_window_py_qgroupbox",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 0.8,
-      "source": "src_gui_main_window_py_qwidget",
-      "target": "gui_connection_panel_connectionchoice",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 0.5
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_choice",
+      "target": "gui_connection_dialog_connectionchoice"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L127",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L102",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_choice",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "gui_connection_dialog_connectiondialog_choice"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L135",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L32",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_emit_connect",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "gui_connection_dialog_connectiondialog_init"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L48",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L77",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_init",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "gui_connection_dialog_connectiondialog_make_baud_combo"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L101",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L85",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_make_baud_combo",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "gui_connection_dialog_connectiondialog_refresh_ports"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L109",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L95",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_refresh_ports",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L119",
-      "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_select_or_insert",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L139",
-      "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "gui_connection_panel_connectionpanel_set_status",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "gui_connection_dialog_connectiondialog_select_or_insert"
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L35",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L27",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel",
-      "target": "qwidget",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog",
+      "target": "qdialog"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L36",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L28",
       "weight": 1.0,
-      "source": "gui_connection_panel_rationale_36",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_rationale_28",
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "gui_main_window",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 1.0
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 0.8,
       "source": "gui_main_window_mainwindow",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 0.5
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "calls",
@@ -3764,222 +3586,106 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
-      "source_location": "L77",
+      "source_location": "L250",
       "weight": 1.0,
-      "source": "gui_main_window_mainwindow_init",
-      "target": "gui_connection_panel_connectionpanel"
+      "source": "gui_main_window_mainwindow_open_connection_dialog",
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "src_gui_main_window_py_appconfig",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 0.5
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "src_gui_main_window_py_qgroupbox",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 0.5
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "src_gui_main_window_py_qwidget",
-      "target": "gui_connection_panel_connectionpanel",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/plots.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_plots_livecounter",
-      "target": "qwidget"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/plots.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_plots_livecounter_init",
-      "target": "qwidget"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/plots.py",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_plots_scrollingplot_init",
-      "target": "qwidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/rpm_view.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_rpm_view_rpmview",
-      "target": "qwidget"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/rpm_view.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_rpm_view_rpmview_init",
-      "target": "qwidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/servo_panel.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_servo_panel_servopanel",
-      "target": "qwidget"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/servo_panel.py",
-      "source_location": "L70",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_servo_panel_servopanel_init",
-      "target": "qwidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/torque_view.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_torque_view_torqueview",
-      "target": "qwidget"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/torque_view.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_torque_view_torqueview_init",
-      "target": "qwidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/vesc_panel.py",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_vesc_panel_vescpanel",
-      "target": "qwidget"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/vesc_panel.py",
-      "source_location": "L84",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "gui_vesc_panel_vescpanel_init",
-      "target": "qwidget"
+      "target": "gui_connection_dialog_connectiondialog"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L63",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L48",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_init",
-      "target": "gui_connection_panel_connectionpanel_make_baud_combo",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_init",
+      "target": "gui_connection_dialog_connectiondialog_make_baud_combo"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L94",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L71",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_init",
-      "target": "gui_connection_panel_connectionpanel_refresh_ports",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_init",
+      "target": "gui_connection_dialog_connectiondialog_refresh_ports"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L96",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L73",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_init",
-      "target": "gui_connection_panel_connectionpanel_select_or_insert",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_init",
+      "target": "gui_connection_dialog_connectiondialog_select_or_insert"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L58",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L43",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_init",
-      "target": "qcombobox",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_init",
+      "target": "qcombobox"
     },
     {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L101",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L77",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_make_baud_combo",
-      "target": "qcombobox",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_make_baud_combo",
+      "target": "qcombobox"
     },
     {
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L119",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L95",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_select_or_insert",
-      "target": "qcombobox",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_select_or_insert",
+      "target": "qcombobox"
     },
     {
       "relation": "calls",
@@ -4007,33 +3713,12 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L116",
+      "source_file": "src/gui/connection_dialog.py",
+      "source_location": "L92",
       "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_refresh_ports",
-      "target": "gui_connection_panel_connectionpanel_select_or_insert",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L136",
-      "weight": 1.0,
-      "source": "gui_connection_panel_connectionpanel_emit_connect",
-      "target": "gui_connection_panel_connectionpanel_choice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/connection_panel.py",
-      "source_location": "L141",
-      "weight": 1.0,
-      "source": "gui_connection_panel_rationale_141",
-      "target": "gui_connection_panel_connectionpanel_set_status",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_connection_dialog_connectiondialog_refresh_ports",
+      "target": "gui_connection_dialog_connectiondialog_select_or_insert"
     },
     {
       "relation": "contains",
@@ -4279,16 +3964,6 @@
       "target": "gui_loadcell_panel_channelbox_update_calibration"
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L46",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_loadcell_panel_loadcellpanel",
-      "confidence_score": 0.5
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/loadcell_panel.py",
@@ -4382,10 +4057,10 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
       "source_location": "L45",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_main_window_mainwindow",
       "target": "gui_loadcell_panel_loadcellpanel"
     },
@@ -4723,16 +4398,6 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L253",
-      "weight": 1.0,
-      "source": "gui_main_window_mainwindow",
-      "target": "gui_main_window_mainwindow_on_connect_requested",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/main_window.py",
       "source_location": "L308",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -4758,6 +4423,16 @@
       "confidence_score": 1.0,
       "source": "gui_main_window_mainwindow",
       "target": "gui_main_window_mainwindow_on_vesc_conn"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/main_window.py",
+      "source_location": "L249",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_main_window_mainwindow",
+      "target": "gui_main_window_mainwindow_open_connection_dialog"
     },
     {
       "relation": "method",
@@ -4813,16 +4488,6 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L341",
-      "weight": 1.0,
-      "source": "gui_main_window_mainwindow",
-      "target": "gui_main_window_mainwindow_update_conn_panel_status",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/main_window.py",
       "source_location": "L196",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -4832,40 +4497,40 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
       "source_location": "L46",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_main_window_mainwindow",
       "target": "gui_rpm_view_rpmview"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
       "source_location": "L47",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_main_window_mainwindow",
       "target": "gui_servo_panel_servopanel"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
       "source_location": "L48",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_main_window_mainwindow",
       "target": "gui_torque_view_torqueview"
     },
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/main_window.py",
       "source_location": "L49",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_main_window_mainwindow",
       "target": "gui_vesc_panel_vescpanel"
     },
@@ -5085,11 +4750,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L186",
+      "source_location": "L172",
       "weight": 1.0,
-      "source": "gui_main_window_rationale_186",
-      "target": "gui_main_window_mainwindow_size_to_screen",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_main_window_rationale_172",
+      "target": "gui_main_window_mainwindow_size_to_screen"
     },
     {
       "relation": "references",
@@ -5117,11 +4782,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/main_window.py",
-      "source_location": "L211",
+      "source_location": "L197",
       "weight": 1.0,
-      "source": "gui_main_window_rationale_211",
-      "target": "gui_main_window_mainwindow_wrap_in_group",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "gui_main_window_rationale_197",
+      "target": "gui_main_window_mainwindow_wrap_in_group"
     },
     {
       "relation": "uses",
@@ -5226,79 +4891,6 @@
       "target": "gui_vesc_panel_vescpanel"
     },
     {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L253",
-      "weight": 1.0,
-      "source": "gui_main_window_mainwindow_on_connect_requested",
-      "target": "connectionchoice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L47",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_rpm_view_rpmview",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L48",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_servo_panel_servopanel",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L49",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_torque_view_torqueview",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L50",
-      "weight": 0.8,
-      "source": "connectionchoice",
-      "target": "gui_vesc_panel_vescpanel",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L329",
-      "weight": 1.0,
-      "source": "gui_main_window_mainwindow_on_arduino_conn",
-      "target": "gui_main_window_mainwindow_update_conn_panel_status",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/gui/main_window.py",
-      "source_location": "L339",
-      "weight": 1.0,
-      "source": "gui_main_window_mainwindow_on_vesc_conn",
-      "target": "gui_main_window_mainwindow_update_conn_panel_status",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/plots.py",
@@ -5381,6 +4973,16 @@
       "target": "gui_plots_livecounter_reset"
     },
     {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/plots.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_plots_livecounter",
+      "target": "qwidget"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/gui/plots.py",
@@ -5404,10 +5006,10 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L15",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_rpm_view_rpmview",
       "target": "gui_plots_livecounter"
     },
@@ -5436,10 +5038,10 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/torque_view.py",
       "source_location": "L14",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_torque_view_torqueview",
       "target": "gui_plots_livecounter"
     },
@@ -5463,6 +5065,112 @@
       "confidence_score": 0.5,
       "source": "src_gui_rpm_view_py_vesctelemetry",
       "target": "gui_plots_livecounter"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/plots.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_plots_livecounter_init",
+      "target": "qwidget"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/plots.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_plots_scrollingplot_init",
+      "target": "qwidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/rpm_view.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_rpm_view_rpmview",
+      "target": "qwidget"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/rpm_view.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_rpm_view_rpmview_init",
+      "target": "qwidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/servo_panel.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_servo_panel_servopanel",
+      "target": "qwidget"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/servo_panel.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_servo_panel_servopanel_init",
+      "target": "qwidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/torque_view.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_torque_view_torqueview",
+      "target": "qwidget"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/torque_view.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_torque_view_torqueview_init",
+      "target": "qwidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/vesc_panel.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_vesc_panel_vescpanel",
+      "target": "qwidget"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/gui/vesc_panel.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gui_vesc_panel_vescpanel_init",
+      "target": "qwidget"
     },
     {
       "relation": "calls",
@@ -5549,10 +5257,10 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/rpm_view.py",
       "source_location": "L15",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_rpm_view_rpmview",
       "target": "gui_plots_scrollingplot"
     },
@@ -5581,10 +5289,10 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "confidence_score": 1.0,
       "source_file": "src/gui/torque_view.py",
       "source_location": "L14",
       "weight": 0.8,
-      "confidence_score": 1.0,
       "source": "gui_torque_view_torqueview",
       "target": "gui_plots_scrollingplot"
     },
@@ -8219,68 +7927,8 @@
       "confidence_score": 1.0,
       "source": "view_recordings_parse_args",
       "target": "namespace"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_motor_dyno_control_telemetry_gui",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L186",
-      "weight": 1.0,
-      "source": "readme_motor_dyno_control_telemetry_gui",
-      "target": "readme_notes_on_libraries",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "readme_motor_dyno_control_telemetry_gui",
-      "target": "readme_project_layout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L69",
-      "weight": 1.0,
-      "source": "readme_motor_dyno_control_telemetry_gui",
-      "target": "readme_quick_start",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L169",
-      "weight": 1.0,
-      "source": "readme_motor_dyno_control_telemetry_gui",
-      "target": "readme_safety",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L132",
-      "weight": 1.0,
-      "source": "readme_motor_dyno_control_telemetry_gui",
-      "target": "readme_viewing_recordings",
-      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "811c80c4883acff52f5a7ecefa20871724cd5e4c"
+  "built_at_commit": "297fc4d5b10daa30f2842757dbdd06b277973f66"
 }

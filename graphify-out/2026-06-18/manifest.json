@@ -1,117 +1,117 @@
 {
-  "src/__init__.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\__init__.py": {
     "mtime": 1781763982.3368747,
     "ast_hash": "a582933a8cda6d07afd151b0cde2fbca",
     "semantic_hash": "a582933a8cda6d07afd151b0cde2fbca"
   },
-  "src/config.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\config.py": {
     "mtime": 1781574011.9077778,
     "ast_hash": "5f4939865e4f5d174876b1b2e848320d",
     "semantic_hash": "5f4939865e4f5d174876b1b2e848320d"
   },
-  "src/data_recorder.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\data_recorder.py": {
     "mtime": 1781574011.9077778,
     "ast_hash": "77236af7869d3ea666d4cddb73d362c6",
     "semantic_hash": "77236af7869d3ea666d4cddb73d362c6"
   },
-  "src/gui/__init__.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\__init__.py": {
     "mtime": 1781763982.3388748,
     "ast_hash": "d1cb0d6090cf810127131f67f6e24876",
     "semantic_hash": "d1cb0d6090cf810127131f67f6e24876"
   },
-  "src/gui/loadcell_panel.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\connection_dialog.py": {
+    "mtime": 1781763982.3398755,
+    "ast_hash": "be226a3cfe5ef685698ed1e69786c463",
+    "semantic_hash": "be226a3cfe5ef685698ed1e69786c463"
+  },
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\loadcell_panel.py": {
     "mtime": 1781763982.3398755,
     "ast_hash": "f9679eb9cef488a9ad6cdb068b43152f",
     "semantic_hash": "f9679eb9cef488a9ad6cdb068b43152f"
   },
-  "src/gui/main_window.py": {
-    "mtime": 1781765581.091693,
-    "ast_hash": "14f2be18f74b386f45fe9d8a61c36e31",
-    "semantic_hash": ""
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\main_window.py": {
+    "mtime": 1781574011.9087877,
+    "ast_hash": "301865921b0758ba30adca8cf72e9f9e",
+    "semantic_hash": "301865921b0758ba30adca8cf72e9f9e"
   },
-  "src/gui/plots.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\plots.py": {
     "mtime": 1781763982.3388748,
     "ast_hash": "91596f74f0860a972eb5bae0b71922ba",
     "semantic_hash": "91596f74f0860a972eb5bae0b71922ba"
   },
-  "src/gui/rpm_view.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\rpm_view.py": {
     "mtime": 1781763982.3388748,
     "ast_hash": "b1e14c3fb5c0324e15152486145b0e03",
     "semantic_hash": "b1e14c3fb5c0324e15152486145b0e03"
   },
-  "src/gui/servo_panel.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\servo_panel.py": {
     "mtime": 1781574011.909778,
     "ast_hash": "cca38ea96808b23df32a64a96824246d",
     "semantic_hash": "cca38ea96808b23df32a64a96824246d"
   },
-  "src/gui/torque_view.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\torque_view.py": {
     "mtime": 1781763982.3388748,
     "ast_hash": "1a6ba0e9f92504dac82e5faac0911751",
     "semantic_hash": "1a6ba0e9f92504dac82e5faac0911751"
   },
-  "src/gui/vesc_panel.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\gui\\vesc_panel.py": {
     "mtime": 1781763982.3388748,
     "ast_hash": "372859821a22bde7d69bdd6483402979",
     "semantic_hash": "372859821a22bde7d69bdd6483402979"
   },
-  "src/hardware/__init__.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\hardware\\__init__.py": {
     "mtime": 1781763982.3368747,
     "ast_hash": "6f6635dbb1a8255e4e946c5d5ed1b18d",
     "semantic_hash": "6f6635dbb1a8255e4e946c5d5ed1b18d"
   },
-  "src/hardware/loadcell_serial.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\hardware\\loadcell_serial.py": {
     "mtime": 1781763982.3398755,
     "ast_hash": "2a07c18cb326582d8d78175557387dfe",
     "semantic_hash": "2a07c18cb326582d8d78175557387dfe"
   },
-  "src/hardware/vesc_controller.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\hardware\\vesc_controller.py": {
     "mtime": 1781763982.3388748,
     "ast_hash": "87827be6e6b40967510eac66691961ea",
     "semantic_hash": "87827be6e6b40967510eac66691961ea"
   },
-  "src/main.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\src\\main.py": {
     "mtime": 1781763982.3368747,
     "ast_hash": "551d9a6513ad9dc5a2cee87f72682bc9",
     "semantic_hash": "551d9a6513ad9dc5a2cee87f72682bc9"
   },
-  "view_recordings.py": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\view_recordings.py": {
     "mtime": 1781574011.912777,
     "ast_hash": "507a12e4daa90172996e2abf3d817fe3",
     "semantic_hash": "507a12e4daa90172996e2abf3d817fe3"
   },
-  "README.md": {
-    "mtime": 1781765574.4519534,
-    "ast_hash": "7d7fc521b95eb797a4cca42fcb6579e7",
-    "semantic_hash": ""
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\README.md": {
+    "mtime": 1781574011.8827856,
+    "ast_hash": "e4eccc07ddeac2ba7fc808dde2afb758",
+    "semantic_hash": "e4eccc07ddeac2ba7fc808dde2afb758"
   },
-  "requirements.txt": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\requirements.txt": {
     "mtime": 1781763982.3368747,
     "ast_hash": "40cdafe6323cb76504f36a93f1592dd6",
     "semantic_hash": "40cdafe6323cb76504f36a93f1592dd6"
   },
-  "Resources/2026-05-25 18-59-32.mkv": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\Resources\\2026-05-25 18-59-32.mkv": {
     "mtime": 1779753650.0,
     "ast_hash": "19724fc12ea5625c79f6bbb7027440a4",
     "semantic_hash": "19724fc12ea5625c79f6bbb7027440a4"
   },
-  "Resources/2026-05-25 19-03-30.mkv": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\Resources\\2026-05-25 19-03-30.mkv": {
     "mtime": 1779753886.0,
     "ast_hash": "5b8018c49c719fe01126a683fd75168d",
     "semantic_hash": "5b8018c49c719fe01126a683fd75168d"
   },
-  "Resources/Motor Control Side by side.mov": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\Resources\\Motor Control Side by side.mov": {
     "mtime": 1779760675.3003225,
     "ast_hash": "16d9e2d49373026fa76c4b20adbcb588",
     "semantic_hash": "16d9e2d49373026fa76c4b20adbcb588"
   },
-  "Resources/Torque reading side by side.mov": {
+  "C:\\Users\\bhush\\OneDrive\\Desktop\\UMN Final Project\\Resources\\Torque reading side by side.mov": {
     "mtime": 1779760927.075901,
     "ast_hash": "b2f94a8677fb0a0591068db462bd497a",
     "semantic_hash": "b2f94a8677fb0a0591068db462bd497a"
-  },
-  "src/gui/connection_panel.py": {
-    "mtime": 1781765429.8305585,
-    "ast_hash": "e6346d5aa245860eb65666f90618f688",
-    "semantic_hash": ""
   }
 }

@@ -2,15 +2,16 @@
 
 Composition:
 
-- Left dock: load-cell calibration / torque panel stacked above the
-  throttle-servo panel and the VESC motor-control panel, split
-  vertically.
+- Left dock: connection controls on top, then the load-cell calibration /
+  torque panel, the throttle-servo panel, and the VESC motor-control
+  panel, split vertically.
 - Center (main area): "Live" view — RPM counter + scrolling RPM plot
   stacked above the torque counter + scrolling torque plot.
 
-A *Connect* menu opens the connection dialog; a *Record* menu starts /
-stops logging RPM and torque to a user-chosen CSV file. A status bar
-shows the state of both serial links and the recording.
+The *Connection* panel (in the left dock) picks the serial ports and
+connects / disconnects the hardware; a *Record* menu starts / stops
+logging RPM and torque to a user-chosen CSV file. A status bar shows the
+state of both serial links and the recording.
 """
 
 from __future__ import annotations
@@ -41,7 +42,7 @@ from ..config import AppConfig
 from ..data_recorder import DataRecorder
 from ..hardware.loadcell_serial import LoadCellSerial
 from ..hardware.vesc_controller import VescController
-from .connection_dialog import ConnectionDialog
+from .connection_panel import ConnectionChoice, ConnectionPanel
 from .loadcell_panel import LoadCellPanel
 from .rpm_view import RpmView
 from .servo_panel import ServoPanel
@@ -67,24 +68,35 @@ class MainWindow(QMainWindow):
         self._size_to_screen()
 
         self._cfg = cfg
+        self._arduino_connected = False
+        self._vesc_connected = False
         self._loadcell = LoadCellSerial(cfg.lc1, cfg.lc2, parent=self)
         self._vesc = VescController(parent=self)
 
-        # ---------- left dock: load-cell, servo, and VESC panels ----------
+        # ---------- left dock: connection, load-cell, servo, and VESC panels ----------
+        self._conn_panel = ConnectionPanel(
+            arduino_port=cfg.arduino_port,
+            arduino_baud=cfg.arduino_baud,
+            vesc_port=cfg.vesc_port,
+            vesc_baud=cfg.vesc_baud,
+            parent=self,
+        )
         self._lc_panel = LoadCellPanel(cfg, self._loadcell, parent=self)
         self._servo_panel = ServoPanel(cfg, self._loadcell, parent=self)
         self._vesc_panel = VescPanel(cfg, self._vesc, parent=self)
 
-        # All three panels live in a single dock on the left, split vertically:
-        # load cells / torque on top, throttle servo in the middle, VESC
-        # motor control at the bottom.
+        # All panels live in a single dock on the left, split vertically:
+        # connection controls on top, then load cells / torque, throttle
+        # servo, and VESC motor control at the bottom.
         left_splitter = QSplitter(Qt.Orientation.Vertical)
+        left_splitter.addWidget(self._wrap_in_group("Connection", self._conn_panel))
         left_splitter.addWidget(self._wrap_in_group("Load cells & torque", self._lc_panel))
         left_splitter.addWidget(self._wrap_in_group("Throttle servo", self._servo_panel))
         left_splitter.addWidget(self._wrap_in_group("Motor control", self._vesc_panel))
-        left_splitter.setStretchFactor(0, 2)
+        left_splitter.setStretchFactor(0, 0)
         left_splitter.setStretchFactor(1, 2)
         left_splitter.setStretchFactor(2, 2)
+        left_splitter.setStretchFactor(3, 2)
         # Keep handles obvious so the user can drag panel boundaries.
         left_splitter.setHandleWidth(6)
         left_splitter.setChildrenCollapsible(False)
@@ -149,6 +161,8 @@ class MainWindow(QMainWindow):
         self._build_menus()
 
         # ---------- signals ----------
+        self._conn_panel.connect_requested.connect(self._on_connect_requested)
+        self._conn_panel.disconnect_requested.connect(self._disconnect_all)
         self._loadcell.connection_changed.connect(self._on_arduino_conn)
         self._loadcell.error.connect(self._on_serial_error)
         self._vesc.connection_changed.connect(self._on_vesc_conn)
@@ -217,16 +231,6 @@ class MainWindow(QMainWindow):
         quit_act.triggered.connect(self.close)
         file_menu.addAction(quit_act)
 
-        conn_menu = menubar.addMenu("&Connection")
-        connect_act = QAction("Connect…", self)
-        connect_act.setShortcut(QKeySequence("Ctrl+K"))
-        connect_act.triggered.connect(self._open_connection_dialog)
-        conn_menu.addAction(connect_act)
-
-        disconnect_act = QAction("Disconnect all", self)
-        disconnect_act.triggered.connect(self._disconnect_all)
-        conn_menu.addAction(disconnect_act)
-
         record_menu = menubar.addMenu("&Record")
         self._start_record_act = QAction("Start recording…", self)
         self._start_record_act.setShortcut(QKeySequence("Ctrl+R"))
@@ -246,18 +250,7 @@ class MainWindow(QMainWindow):
 
     # ============================================================ slots
 
-    def _open_connection_dialog(self) -> None:
-        dlg = ConnectionDialog(
-            arduino_port=self._cfg.arduino_port,
-            arduino_baud=self._cfg.arduino_baud,
-            vesc_port=self._cfg.vesc_port,
-            vesc_baud=self._cfg.vesc_baud,
-            parent=self,
-        )
-        if dlg.exec() != ConnectionDialog.DialogCode.Accepted:
-            return
-
-        choice = dlg.choice()
+    def _on_connect_requested(self, choice: ConnectionChoice) -> None:
         self._cfg.arduino_port = choice.arduino_port
         self._cfg.arduino_baud = choice.arduino_baud
         self._cfg.vesc_port = choice.vesc_port
@@ -324,6 +317,7 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Save failed", str(exc))
 
     def _on_arduino_conn(self, connected: bool) -> None:
+        self._arduino_connected = connected
         if connected:
             self._arduino_status.setText(
                 f"Arduino: connected ({self._cfg.arduino_port})"
@@ -332,14 +326,25 @@ class MainWindow(QMainWindow):
         else:
             self._arduino_status.setText("Arduino: disconnected")
             self._arduino_status.setStyleSheet("color: gray;")
+        self._update_conn_panel_status()
 
     def _on_vesc_conn(self, connected: bool) -> None:
+        self._vesc_connected = connected
         if connected:
             self._vesc_status.setText(f"VESC: connected ({self._cfg.vesc_port})")
             self._vesc_status.setStyleSheet("color: #27ae60; font-weight: bold;")
         else:
             self._vesc_status.setText("VESC: disconnected")
             self._vesc_status.setStyleSheet("color: gray;")
+        self._update_conn_panel_status()
+
+    def _update_conn_panel_status(self) -> None:
+        self._conn_panel.set_status(
+            self._arduino_connected,
+            self._vesc_connected,
+            self._cfg.arduino_port,
+            self._cfg.vesc_port,
+        )
 
     def _on_serial_error(self, message: str) -> None:
         log.warning("Serial error: %s", message)

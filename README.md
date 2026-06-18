@@ -15,9 +15,13 @@ A PyQt6 desktop application for a small motor dynamometer. It
 
 ```
 +---------------------------------------------------------------+
-|  File  Connection  Record  Help                               |
+|  File  Record  Help                                           |
 +--------------------+------------------------------------------+
-| Load cells & torque|  Live RPM:  1234.5  rpm                  |
+| Connection         |  Live RPM:  1234.5  rpm                  |
+|  Ports / baud      |                                          |
+|  [Connect][Disc.]  |                                          |
+|--------------------|                                          |
+| Load cells & torque|                                          |
 |  Tare / Calibrate  |  +------------------------------------+  |
 |  LC1: 12.3 N       |  |        RPM vs time plot            |  |
 |  LC2: 11.9 N       |  +------------------------------------+  |
@@ -93,8 +97,9 @@ A PyQt6 desktop application for a small motor dynamometer. It
    python -m src.main
    ```
 
-5. From the **Connection** menu pick the serial ports for the Arduino and the VESC
-   and click *Connect*.
+5. In the **Connection** panel (top of the left dock) pick the serial ports for
+   the Arduino and the VESC and click *Connect*. Use *Disconnect all* to drop
+   both links and *Refresh ports* to re-scan after plugging in hardware.
 6. From the **Calibration** panel, *Tare* each load cell with no load applied,
    then place a known mass on each cell and enter the reference value in kg.
    The slope (counts per Newton) is saved to `config.json`.
