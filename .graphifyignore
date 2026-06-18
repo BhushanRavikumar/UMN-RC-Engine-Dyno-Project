@@ -1,0 +1,50 @@
+# .graphifyignore - files/dirs graphify should skip when building the knowledge graph
+# Uses .gitignore-style glob patterns.
+
+# graphify's own output
+graphify-out/
+
+# Version control / editor / OS
+.git/
+.cursor/
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python environments & caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg
+
+# Large media (silent GUI demo recordings - no useful text)
+Resources/
+*.mkv
+*.mov
+*.mp4
+*.mp3
+*.wav
+
+# Captured run data (not source, just dyno output)
+Recordings/
+*.csv
+
+# Local runtime settings (serial ports, calibration secrets)
+config.json
+
+# Logs
+*.log
