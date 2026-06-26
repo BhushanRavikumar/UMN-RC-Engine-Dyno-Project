@@ -64,6 +64,18 @@ static const uint8_t RX_BUF_LEN = 32;
 char rx_buf[RX_BUF_LEN];
 uint8_t rx_len = 0;
 
+// Watchdog for the load-cell stream. When the motor runs hard, electrical
+// noise and a brief sag on the shared 5 V rail can latch an HX711 into a
+// power-down / stuck state. After that, is_ready() never returns true again
+// and the LC stream dies. If no fresh sample pair has been read for this
+// long, attempt a recovery (and report which channel is not responding).
+static const unsigned long LC_STALL_TIMEOUT_MS = 500;
+unsigned long last_sample_ms = 0;
+// Throttle the diagnostic output so a persistently-faulty channel does not
+// flood the serial link (which would also drown out real LC/SV lines).
+static const unsigned long LC_REPORT_INTERVAL_MS = 2000;
+unsigned long last_report_ms = 0;
+
 static void apply_servo_angle(long deg) {
     if (deg < SERVO_MIN_DEG) deg = SERVO_MIN_DEG;
     if (deg > SERVO_MAX_DEG) deg = SERVO_MAX_DEG;
@@ -117,10 +129,46 @@ void setup() {
     throttle.attach(SERVO_PIN);
     throttle.write(SERVO_BOOT_DEG);
 
+    // Boot self-test: give each amplifier up to 1 s to produce its first
+    // data-ready. A channel that reports NO RESPONSE here has a wiring,
+    // power, or module fault (the data line never goes low) — no amount of
+    // host-side or firmware retrying can invent data for a dead channel.
+    Serial.print(F("# lc1 boot: "));
+    Serial.println(lc1.wait_ready_timeout(1000) ? F("OK") : F("NO RESPONSE"));
+    Serial.print(F("# lc2 boot: "));
+    Serial.println(lc2.wait_ready_timeout(1000) ? F("OK") : F("NO RESPONSE"));
+
     // Print a one-line banner so the host can confirm the link.
     Serial.println(F("# dual_hx711 ready"));
     Serial.print(F("SV,"));
     Serial.println(servo_angle);
+
+    last_sample_ms = millis();
+    last_report_ms = millis();
+}
+
+// Called when the paired read has stalled. Reports which channel is not
+// asserting data-ready (the key diagnostic), then toggles both amplifiers
+// through the power-down / power-up sequence to recover from a recoverable
+// (noise / brownout) lockup. Output is rate-limited so a hard-faulted
+// channel cannot flood the serial link.
+static void on_stall() {
+    unsigned long now = millis();
+    if (now - last_report_ms >= LC_REPORT_INTERVAL_MS) {
+        Serial.print(F("# HX711 stall: lc1_ready="));
+        Serial.print(lc1.is_ready() ? 1 : 0);
+        Serial.print(F(" lc2_ready="));
+        Serial.print(lc2.is_ready() ? 1 : 0);
+        Serial.println(F(" (check wiring/power on the not-ready channel)"));
+        last_report_ms = now;
+    }
+
+    lc1.power_down();
+    lc2.power_down();
+    delay(1);
+    lc1.power_up();
+    lc2.power_up();
+    last_sample_ms = millis();
 }
 
 void loop() {
@@ -131,12 +179,26 @@ void loop() {
     // read() blocks until the chip signals data ready, so simply alternating
     // between channels keeps both load cells at their natural sample rate.
     if (lc1.is_ready() && lc2.is_ready()) {
+        // Disable interrupts for the duration of each bit-banged read so the
+        // Servo library's timer ISR can't stretch an SCK pulse mid-read. A
+        // clock line held high for >60 us pushes the HX711 into power-down
+        // and yields a corrupt sample that the host then silently discards,
+        // which looks like "no load-cell data" while the motor/servo runs.
+        noInterrupts();
         long r1 = lc1.read();
+        interrupts();
+
+        noInterrupts();
         long r2 = lc2.read();
+        interrupts();
+
+        last_sample_ms = millis();
 
         Serial.print(F("LC,"));
         Serial.print(r1);
         Serial.print(',');
         Serial.println(r2);
+    } else if (millis() - last_sample_ms > LC_STALL_TIMEOUT_MS) {
+        on_stall();
     }
 }

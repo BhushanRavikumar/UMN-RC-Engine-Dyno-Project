@@ -139,7 +139,10 @@ class VescController(QObject):
         # bytes object atomically swaps the "sticky" command.
         self._mode: ControlMode = ControlMode.RELEASED
         self._setpoint_value: float = 0.0
-        self._setpoint_bytes: bytes = encode(Alive())
+        # Idle state commands zero current (not just the Alive heartbeat) so
+        # the motor coasts. Sending Alive alone would keep any latched
+        # setpoint alive via the VESC's command-timeout watchdog.
+        self._setpoint_bytes: bytes = encode(SetCurrent(0))
         self._one_shot: bytes = b""
 
         # Pre-encoded GetValues request and the expected response length.
@@ -177,7 +180,7 @@ class VescController(QObject):
         with self._lock:
             self._mode = ControlMode.RELEASED
             self._setpoint_value = 0.0
-            self._setpoint_bytes = encode(Alive())
+            self._setpoint_bytes = encode(SetCurrent(0))
             self._one_shot = b""
 
         self._stop_event.clear()
@@ -296,11 +299,19 @@ class VescController(QObject):
         self.set_brake_current(self._max_brake_current_a)
 
     def release(self) -> None:
-        """Stop driving the motor — it will coast."""
+        """Stop driving the motor — it will coast.
+
+        We must send an explicit zero-current command as the sticky
+        setpoint, not just ``Alive``. ``Alive`` is the VESC's watchdog
+        heartbeat: it resets the command-timeout timer, which keeps the
+        *previous* setpoint (e.g. the last ``SetRPM``) latched. Sending
+        ``Alive`` alone therefore keeps the motor driving forever. Commanding
+        zero current makes the motor produce no torque and coast.
+        """
         with self._lock:
             self._mode = ControlMode.RELEASED
             self._setpoint_value = 0.0
-            self._setpoint_bytes = encode(Alive())
+            self._setpoint_bytes = encode(SetCurrent(0))
             self._one_shot = b""
 
     # The full-brake current the GUI considers "max". The VESC panel writes
