@@ -1,7 +1,14 @@
+# Direct dependencies
 PyQt6>=6.6.0
 pyqtgraph>=0.13.3
 pyserial>=3.5
 numpy>=1.26.0
+
+# Transitive dependencies (pinned to known-good versions)
+PyQt6-Qt6>=6.11.0
+PyQt6-sip>=13.8
+colorama>=0.4.6
+crccheck>=1.3.1
 
 # The PyPI release of pyvesc (1.0.5) is much older than the GitHub master
 # and is missing the high-level `VESC` class, `Alive`, `SetHandbrake` and
