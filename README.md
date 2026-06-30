@@ -148,6 +148,8 @@ The toolbar lets you:
 - Pick which recording to display from a drop-down (newest first).
 - *Browse folder…* to switch to a different directory.
 - *Refresh* to re-scan after a new recording is dropped in.
+- *Export image…* to save the current plot canvas as a PNG or JPEG file.
+  The save dialog defaults to the recording's name and folder.
 - Toggle the **Layout**:
   - **Stacked** — three vertically aligned plots, one per channel, with
     their X axes linked so panning / zooming one pans all of them. Best

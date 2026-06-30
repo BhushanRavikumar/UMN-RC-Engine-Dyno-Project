@@ -187,6 +187,9 @@ class ViewerWindow(QMainWindow):
         layout_group.addButton(self._overlay_radio)
         self._stacked_radio.toggled.connect(self._on_layout_changed)
 
+        export_btn = QPushButton("Export image…")
+        export_btn.clicked.connect(self._export_image)
+
         self._folder_label = QLabel()
         self._folder_label.setStyleSheet("color: gray;")
         self._update_folder_label()
@@ -200,6 +203,8 @@ class ViewerWindow(QMainWindow):
         toolbar.addWidget(QLabel("Layout:"))
         toolbar.addWidget(self._stacked_radio)
         toolbar.addWidget(self._overlay_radio)
+        toolbar.addSpacing(20)
+        toolbar.addWidget(export_btn)
 
         # ---------- crosshair read-out strip ----------
         self._readout_label = QLabel("Hover a plot to inspect values")
@@ -312,6 +317,33 @@ class ViewerWindow(QMainWindow):
     def _on_layout_changed(self, _checked: bool) -> None:
         if self._data is not None:
             self._rebuild_plots()
+
+    # ============================================================ export
+
+    def _export_image(self) -> None:
+        """Save the current plot canvas to a PNG or JPEG file."""
+        if self._data is None:
+            QMessageBox.information(self, "No data", "Load a recording first.")
+            return
+
+        stem = self._file_combo.currentText().removesuffix(".csv") or "recording"
+        default_path = str(self._folder / f"{stem}.png")
+
+        path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Export plot as image",
+            default_path,
+            "PNG image (*.png);;JPEG image (*.jpg *.jpeg)",
+        )
+        if not path:
+            return
+
+        pixmap = self._canvas.grab()
+        if not pixmap.save(path):
+            QMessageBox.warning(self, "Export failed", f"Could not save image to:\n{path}")
+            return
+
+        log.info("Exported plot to %s", path)
 
     # ============================================================ plot build
 
